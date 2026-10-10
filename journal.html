@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyage Journal — VOYAGE | Philippine Travel</title>
+    <meta name="description" content="Read travel stories and diary entries from across the Philippines — Luzon, Visayas, and Mindanao.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Merriweather:ital@0;1&display=swap" rel="stylesheet">
+    <!-- VOYAGE Shared CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           JOURNAL PAGE — SCRAPBOOK AESTHETIC
+           ============================================ */
+
+        body {
+            background-color: #F5EDD8;
+        }
+
+        /* Parchment / sandy texture background */
+        .parchment-bg {
+            background-color: #F5EDD8;
+            background-image:
+                radial-gradient(ellipse at 20% 50%, rgba(210,180,140,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(180,150,100,0.12) 0%, transparent 50%);
+        }
+
+        /* ---- NAVBAR override ---- */
+
+        /* ---- HERO SECTION ---- */
+        .journal-hero {
+            background-color: #F5EDD8;
+            padding: 3.5rem 0 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .leaf-deco {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .leaf-tl {
+            top: -10px;
+            left: -20px;
+            width: 220px;
+            height: 220px;
+            opacity: 0.55;
+        }
+
+        .leaf-tr {
+            top: -10px;
+            right: -20px;
+            width: 200px;
+            height: 200px;
+            opacity: 0.55;
+            transform: scaleX(-1);
+        }
+
+        .leaf-bl {
+            bottom: -20px;
+            left: -10px;
+            width: 180px;
+            height: 180px;
+            opacity: 0.45;
+        }
+
+        .leaf-br {
+            bottom: -20px;
+            right: -10px;
+            width: 180px;
+            height: 180px;
+            opacity: 0.45;
+            transform: scaleX(-1);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-style: italic;
+            color: #1B3A5C;
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: #5A4A30;
+            margin-bottom: 0;
+        }
+
+        /* ---- NOTEBOOK FEATURED SECTION ---- */
+        .notebook-section {
+            background-color: #F5EDD8;
+            padding: 2rem 0 3rem;
+            position: relative;
+        }
+
+        /* The notebook card itself */
+        .notebook-card {
+            background-color: #FEFAF2;
+            border: 1px solid #D9C9A8;
+            border-radius: 6px;
+            box-shadow:
+                0 4px 20px rgba(0,0,0,0.1),
+                inset 0 0 0 8px #F0E6CC,
+                inset 0 0 0 9px #D9C9A8;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Notebook lines on the right side */
+        .notebook-card::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            right: 0;
+            width: 55%;
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 27px,
+                rgba(180,160,120,0.25) 27px,
+                rgba(180,160,120,0.25) 28px
+            );
+            pointer-events: none;
+        }
+
+        /* Red margin line */
+        .notebook-card::after {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 46%;
+            width: 2px;
+            background-color: rgba(220, 120, 100, 0.3);
+            pointer-events: none;
+        }
+
+        .notebook-photo {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 3px;
+            box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+        }
+
+        .notebook-photo-placeholder {
+            width: 100%;
+            height: 260px;
+            border-radius: 3px;
+            box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #3A7D44 0%, #1B3A5C 100%);
+            flex-direction: column;
+            color: white;
+        }
+
+        .featured-entry-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #1B3A5C;
+            margin-bottom: 0.4rem;
+            line-height: 1.3;
+        }
+
+        .featured-entry-date {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.82rem;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-entry-text {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.88rem;
+            color: #5A4A30;
+            line-height: 1.8;
+        }
+
+        /* Sticky note / postcard element */
+        .sticky-note {
+            background-color: #F5E6C0;
+            border: 1px solid #D9C089;
+            border-radius: 2px;
+            padding: 1rem 1.25rem;
+            box-shadow: 2px 3px 8px rgba(0,0,0,0.12), -1px -1px 0 rgba(0,0,0,0.05);
+            transform: rotate(2deg);
+            font-family: 'Caveat', cursive;
+            font-size: 1rem;
+            color: #5A4A30;
+            line-height: 1.5;
+            max-width: 200px;
+            margin-left: auto;
+        }
+
+        /* ---- READ MORE BUTTON ---- */
+        .btn-read-more {
+            background-color: #1B3A5C;
+            color: #FEFAF2;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 0.6rem 1.75rem;
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-read-more:hover {
+            background-color: #2a5580;
+            color: #FEFAF2;
+        }
+
+        /* ---- MORE JOURNAL ENTRIES SECTION ---- */
+        .entries-section {
+            background-color: #F5EDD8;
+            padding: 2.5rem 0 4rem;
+            position: relative;
+        }
+
+        .entries-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #1B3A5C;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Polaroid-style card */
+        .polaroid-card {
+            background-color: #FEFAF2;
+            border: 1px solid #D9C9A8;
+            border-radius: 2px;
+            padding: 0.6rem 0.6rem 1rem 0.6rem;
+            box-shadow: 2px 4px 12px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .polaroid-card:hover {
+            transform: translateY(-4px) rotate(0.5deg);
+            box-shadow: 4px 8px 20px rgba(0,0,0,0.16);
+        }
+
+        .polaroid-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .polaroid-img-placeholder {
+            width: 100%;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .polaroid-caption {
+            padding: 0.7rem 0.3rem 0.1rem;
+        }
+
+        .polaroid-caption .entry-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            color: #1B3A5C;
+            margin-bottom: 0.2rem;
+            line-height: 1.3;
+        }
+
+        .polaroid-caption .entry-meta {
+            font-family: 'Caveat', cursive;
+            font-size: 0.88rem;
+            color: #888;
+        }
+
+        /* Slight rotation on alternating cards */
+        .polaroid-card.tilt-l { transform: rotate(-1.2deg); }
+        .polaroid-card.tilt-r { transform: rotate(1deg); }
+        .polaroid-card.tilt-l:hover { transform: rotate(0deg) translateY(-4px); }
+        .polaroid-card.tilt-r:hover { transform: rotate(0deg) translateY(-4px); }
+
+        /* ---- DECORATIVE TROPICAL LEAVES (SVG inline) ---- */
+        .tropical-corner {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ---- FOOTER override ---- */
+        .voyage-footer {
+            background-color: #122840;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .notebook-card::before,
+            .notebook-card::after { display: none; }
+            .sticky-note { margin: 1.5rem auto 0; }
+        }
+    </style>
+</head>
+<body class="parchment-bg">
+
+    <!-- Navigation Bar -->
+    <!-- ========== NAVBAR (Bootstrap offcanvas on mobile) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-voyage fixed-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">VOYAGE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-end offcanvas-voyage" tabindex="-1" id="mainMenu" aria-labelledby="mainMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="mainMenuLabel">VOYAGE</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="explore.html">Explore Philippines</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="destinations.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a>
+              <ul class="dropdown-menu dropdown-menu-voyage">
+                <li><a class="dropdown-item" href="luzon.html">Luzon</a></li>
+                <li><a class="dropdown-item" href="visayas.html">Visayas</a></li>
+                <li><a class="dropdown-item" href="mindanao.html">Mindanao</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="destinations.html">All destinations</a></li>
+              </ul>
+   
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-terracotta btn-sm" href="plan.html">Plan Your Trip</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- ========================
+         HERO — Scrapbook Title
+         ======================== -->
+    <section class="journal-hero parchment-bg">
+        <div class="container position-relative" style="z-index:1;">
+
+            <!-- Tropical leaf SVG — top left -->
+            <div style="position:absolute; top:-30px; left:-40px; width:240px; opacity:0.6; pointer-events:none; z-index:0;">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,180 C30,120 80,80 160,20 C120,60 100,100 80,140 C100,110 130,90 160,20 C100,80 60,130 10,180Z" fill="#3A7D44" opacity="0.7"/>
+                    <path d="M5,185 C25,125 70,85 150,25" stroke="#2D6235" stroke-width="1.5" fill="none"/>
+                    <path d="M30,160 C50,130 90,100 140,60" fill="#4E9A5A" opacity="0.5"/>
+                    <path d="M50,170 C30,100 60,50 120,10 C80,60 70,110 50,170Z" fill="#3A7D44" opacity="0.6"/>
+                </svg>
+            </div>
+
+            <!-- Tropical leaf SVG — top right -->
+            <div style="position:absolute; top:-30px; right:-40px; width:240px; opacity:0.6; pointer-events:none; z-index:0; transform:scaleX(-1);">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,180 C30,120 80,80 160,20 C120,60 100,100 80,140 C100,110 130,90 160,20 C100,80 60,130 10,180Z" fill="#3A7D44" opacity="0.7"/>
+                    <path d="M5,185 C25,125 70,85 150,25" stroke="#2D6235" stroke-width="1.5" fill="none"/>
+                    <path d="M50,170 C30,100 60,50 120,10 C80,60 70,110 50,170Z" fill="#4E9A5A" opacity="0.6"/>
+                </svg>
+            </div>
+
+            <!-- Hero text — centered -->
+            <div class="text-center py-4" style="position:relative; z-index:1;">
+                <h1 class="hero-title">Voyage Journal</h1>
+                <p class="hero-subtitle">Real stories. Beautiful journeys.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================
+         NOTEBOOK FEATURED ENTRY
+         ======================== -->
+    <section class="notebook-section parchment-bg">
+        <div class="container" style="position:relative; z-index:1;">
+            <div class="notebook-card">
+                <div class="row g-4 align-items-start">
+
+                    <!-- Photo side -->
+                    <div class="col-md-5">
+                        <!--
+                            Replace this placeholder div with:
+                            <img src="../images/journal/baguio-featured.jpg"
+                                 alt="A Weekend in Baguio"
+                                 class="notebook-photo">
+                        -->
+                        <img src="../images/journal/baguio-featured.jpg" alt="A Weekend in Baguio" class="notebook-photo">
+                    </div>
+
+                    <!-- Text side — lined notebook look -->
+                    <div class="col-md-7" style="position:relative; z-index:1;">
+                        <h3 class="featured-entry-title">A Weekend in Baguio</h3>
+                        <div class="featured-entry-date">
+                            <i class="bi bi-calendar3" style="color:#C0603A;"></i>
+                            October 4, 2026
+                        </div>
+                        <p class="featured-entry-text">
+                            The morning fog rolled through the mountains as we started our walk around
+                            the city. The air was cool and carried the scent of pine trees — a reminder
+                            that we were somewhere truly different from the lowlands. Baguio greeted us
+                            with cold air, pine forests, and a pace of life that felt worlds away from
+                            the city below. By evening, strawberry taho and warm café lights made the
+                            highland city feel like home.
+                        </p>
+
+                        <a href="journal-entry.html" class="btn-read-more mt-2">Read More</a>
+
+                        <!-- Sticky note — positioned bottom right of text area -->
+                        <div class="sticky-note mt-4" style="max-width:180px; margin-left:auto;">
+                            Sometimes, the best stories are found far from home.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================
+         MORE JOURNAL ENTRIES
+         ======================== -->
+    <section class="entries-section parchment-bg">
+        <div class="container" style="position:relative; z-index:1;">
+
+            <!-- Bottom-left leaf decoration -->
+            <div style="position:absolute; bottom:-30px; left:-50px; width:260px; opacity:0.5; pointer-events:none; z-index:0;">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,180 C30,120 80,80 160,20 C120,60 100,100 80,140 C100,110 130,90 160,20 C100,80 60,130 10,180Z" fill="#3A7D44" opacity="0.8"/>
+                    <path d="M5,185 C25,125 70,85 150,25" stroke="#2D6235" stroke-width="1.5" fill="none"/>
+                    <path d="M50,170 C30,100 60,50 120,10 C80,60 70,110 50,170Z" fill="#4E9A5A" opacity="0.5"/>
+                </svg>
+            </div>
+
+            <!-- Bottom-right flower -->
+            <div style="position:absolute; bottom:-20px; right:-30px; width:160px; opacity:0.5; pointer-events:none; z-index:0;">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="60" cy="30" rx="18" ry="28" fill="#D4478A" opacity="0.7" transform="rotate(0 60 60)"/>
+                    <ellipse cx="60" cy="30" rx="18" ry="28" fill="#E05A9A" opacity="0.6" transform="rotate(72 60 60)"/>
+                    <ellipse cx="60" cy="30" rx="18" ry="28" fill="#D4478A" opacity="0.7" transform="rotate(144 60 60)"/>
+                    <ellipse cx="60" cy="30" rx="18" ry="28" fill="#E05A9A" opacity="0.6" transform="rotate(216 60 60)"/>
+                    <ellipse cx="60" cy="30" rx="18" ry="28" fill="#D4478A" opacity="0.7" transform="rotate(288 60 60)"/>
+                    <circle cx="60" cy="60" r="14" fill="#F5C842"/>
+                </svg>
+            </div>
+
+            <h2 class="entries-heading">More Journal Entries</h2>
+
+            <!-- Polaroid card grid -->
+            <div class="row g-4">
+
+                <!-- Entry 1 — Island Days in Bohol -->
+                <div class="col-md-4">
+                    <a href="journal-entry.html" class="polaroid-card tilt-l">
+                        <!--
+                            Replace placeholder with:
+                            <img src="../images/journal/bohol.jpg" alt="Island Days in Bohol" class="polaroid-img">
+                        -->
+                        <img src="../images/journal/bohol.jpg" alt="Island Days in Bohol" class="polaroid-img">
+                        <div class="polaroid-caption">
+                            <div class="entry-title">Island Days in Bohol</div>
+                            <div class="entry-meta">Chocolate Hills &amp; Loboc</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Entry 2 — Chasing Sunsets in Siargao -->
+                <div class="col-md-4">
+                    <a href="journal-entry.html" class="polaroid-card tilt-r">
+                        <!--
+                            Replace placeholder with:
+                            <img src="../images/journal/siargao.jpg" alt="Chasing Sunsets in Siargao" class="polaroid-img">
+                        -->
+                        <img src="../images/journal/siargao.jpg" alt="Chasing Sunsets in Siargao" class="polaroid-img">
+                        <div class="polaroid-caption">
+                            <div class="entry-title">Chasing Sunsets in Siargao</div>
+                            <div class="entry-meta">Surigao del Norte</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Entry 3 — Exploring Vigan -->
+                <div class="col-md-4">
+                    <a href="journal-entry.html" class="polaroid-card tilt-l">
+                        <!--
+                            Replace placeholder with:
+                            <img src="../images/journal/vigan.jpg" alt="Exploring Vigan" class="polaroid-img">
+                        -->
+                        <img src="../images/journal/vigan.jpg" alt="Exploring Vigan" class="polaroid-img">
+                        <div class="polaroid-caption">
+                            <div class="entry-title">Exploring Vigan</div>
+                            <div class="entry-meta">Ilocos Sur &amp; Heritage</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Entry 4 — A Weekend in Batangas -->
+                <div class="col-md-4">
+                    <a href="journal-entry.html" class="polaroid-card tilt-r">
+                        <img src="../images/journal/batangas.jpg" alt="A Weekend in Batangas" class="polaroid-img">
+                        <div class="polaroid-caption">
+                            <div class="entry-title">A Weekend in Batangas</div>
+                            <div class="entry-meta">Anilao &amp; Laiya Beach</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Entry 5 — The Island Born of Fire -->
+                <div class="col-md-4">
+                    <a href="journal-entry.html" class="polaroid-card tilt-l">
+                        <img src="../images/journal/camiguin.jpg" alt="The Island Born of Fire — Camiguin" class="polaroid-img">
+                        <div class="polaroid-caption">
+                            <div class="entry-title">The Island Born of Fire</div>
+                            <div class="entry-meta">Camiguin, Mindanao</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Entry 6 — Sunrise on Boracay -->
+                <div class="col-md-4">
+                    <a href="journal-entry.html" class="polaroid-card tilt-r">
+                        <img src="../images/journal/boracay.jpg" alt="Sunrise on White Beach, Boracay" class="polaroid-img">
+                        <div class="polaroid-caption">
+                            <div class="entry-title">Sunrise on White Beach</div>
+                            <div class="entry-meta">Boracay, Visayas</div>
+                        </div>
+                    </a>
+                </div>
+
+            </div><!-- /row -->
+        </div>
+    </section>
+
+
+    <!-- ========================
+         FOOTER
+         ======================== -->
+    <footer class="voyage-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">V<span>O</span>YAGE</div>
+                    <p class="footer-tagline mt-1">Discover the Philippines, one journey at a time.</p>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6>Explore</h6>
+                    <ul>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="journal.html">Journal</a></li>
+                        <li><a href="itineraries.html">Itineraries</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6>Regions</h6>
+                    <ul>
+                        <li><a href="luzon.html">Luzon</a></li>
+                        <li><a href="visayas.html">Visayas</a></li>
+                        <li><a href="mindanao.html">Mindanao</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6>Plan</h6>
+                    <ul>
+                        <li><a href="things-to-do.html">Things to Do</a></li>
+                        <li><a href="food-culture.html">Food &amp; Culture</a></li>
+                        <li><a href="explore.html">Explore Philippines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 VOYAGE &nbsp;|&nbsp; ITEW1 Group Project</div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Weekend in Baguio — Voyage Journal | VOYAGE</title>
+    <meta name="description" content="A travel diary entry from Baguio City — morning fog, pine trees, Burnham Park, and the highland charm of the City of Pines.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Merriweather:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <!-- VOYAGE Shared CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           JOURNAL ENTRY PAGE — SCRAPBOOK AESTHETIC
+           ============================================ */
+
+        body {
+            background-color: #F5EDD8;
+        }
+
+        .parchment-bg {
+            background-color: #F5EDD8;
+        }
+
+        /* ---- NAVBAR ---- */
+        /* navbar-voyage styles are in css/style.css */
+
+        /* ---- HERO PHOTO — full width ---- */
+        .entry-hero-photo {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .entry-hero-placeholder {
+            width: 100%;
+            height: 420px;
+            background: linear-gradient(135deg, #2D5A3A 0%, #1B3A5C 50%, #3A7D44 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+        }
+
+        /* ---- ARTICLE BODY ---- */
+        .entry-article-section {
+            background-color: #F5EDD8;
+            padding: 2.5rem 0 1rem;
+        }
+
+        .entry-main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #1B3A5C;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .entry-date-line {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 1.5rem;
+        }
+
+        .entry-date-line i {
+            color: #C0603A;
+        }
+
+        .entry-body-text {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.92rem;
+            color: #4A3C28;
+            line-height: 1.85;
+        }
+
+        .entry-body-text p {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.92rem;
+            color: #4A3C28;
+            line-height: 1.85;
+            margin-bottom: 1.1rem;
+        }
+
+        /* ---- POLAROID PHOTO PAIR ---- */
+        .photo-pair-section {
+            background-color: #F5EDD8;
+            padding: 1.5rem 0 2rem;
+        }
+
+        .polaroid-frame {
+            background-color: #FEFAF2;
+            border: 1px solid #D9C9A8;
+            padding: 0.6rem 0.6rem 1.2rem 0.6rem;
+            box-shadow: 3px 4px 14px rgba(0,0,0,0.14);
+            border-radius: 2px;
+            display: block;
+        }
+
+        .polaroid-frame.tilt-left {
+            transform: rotate(-2deg);
+        }
+
+        .polaroid-frame.tilt-right {
+            transform: rotate(2deg);
+        }
+
+        .polaroid-photo {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .polaroid-photo-placeholder {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .polaroid-label {
+            font-family: 'Caveat', cursive;
+            font-size: 0.95rem;
+            color: #7A6A50;
+            text-align: center;
+            padding-top: 0.6rem;
+        }
+
+        /* ---- HANDWRITTEN STICKY NOTE ---- */
+        .sticky-note-quote {
+            background-color: #F5E6C0;
+            border: 1px solid #D9C089;
+            border-radius: 2px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.12), -1px -1px 0 rgba(0,0,0,0.04);
+            transform: rotate(1.5deg);
+            font-family: 'Caveat', cursive;
+            font-size: 1.15rem;
+            color: #5A4A30;
+            line-height: 1.55;
+            position: relative;
+            max-width: 260px;
+        }
+
+        /* Small fold corner */
+        .sticky-note-quote::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 16px 16px;
+            border-color: transparent transparent #D9C089 transparent;
+        }
+
+        /* ---- BACK TO JOURNAL BUTTON ---- */
+        .btn-back-journal {
+            background-color: #1B3A5C;
+            color: #FEFAF2;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 0.65rem 1.75rem;
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-back-journal:hover {
+            background-color: #2a5580;
+            color: #FEFAF2;
+        }
+
+        /* ---- DECORATIVE DIVIDER ---- */
+        .scrap-divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #D9C9A8, transparent);
+            margin: 1.5rem 0;
+        }
+
+        /* ---- LEAF DECORATIONS ---- */
+        .entry-leaf-bl {
+            position: absolute;
+            bottom: -20px;
+            left: -30px;
+            width: 200px;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .entry-leaf-br {
+            position: absolute;
+            bottom: -20px;
+            right: -30px;
+            width: 200px;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 0;
+            transform: scaleX(-1);
+        }
+
+        /* ---- FOOTER ---- */
+        .voyage-footer {
+            background-color: #122840;
+        }
+
+        @media (max-width: 768px) {
+            .entry-hero-placeholder,
+            .entry-hero-photo { height: 260px; }
+            .entry-main-title { font-size: 1.7rem; }
+            .polaroid-frame.tilt-left,
+            .polaroid-frame.tilt-right { transform: none; }
+            .sticky-note-quote { max-width: 100%; margin-top: 1.5rem; transform: none; }
+        }
+    </style>
+</head>
+<body class="parchment-bg">
+
+    <!-- Navigation Bar -->
+    <!-- ========== NAVBAR (Bootstrap offcanvas on mobile) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-voyage fixed-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">VOYAGE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-end offcanvas-voyage" tabindex="-1" id="mainMenu" aria-labelledby="mainMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="mainMenuLabel">VOYAGE</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="explore.html">Explore Philippines</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="destinations.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a>
+              <ul class="dropdown-menu dropdown-menu-voyage">
+                <li><a class="dropdown-item" href="luzon.html">Luzon</a></li>
+                <li><a class="dropdown-item" href="visayas.html">Visayas</a></li>
+                <li><a class="dropdown-item" href="mindanao.html">Mindanao</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="destinations.html">All destinations</a></li>
+              </ul>
+   
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-terracotta btn-sm" href="plan.html">Plan Your Trip</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+    <!-- ========================
+         FULL-WIDTH HERO PHOTO
+         ======================== -->
+    <!--
+        To add your photo, replace the div below with:
+        <img src="../images/journal/baguio-featured.jpg"
+             alt="A Weekend in Baguio — highland landscape"
+             class="entry-hero-photo">
+    -->
+    <img src="../images/journal/baguio-featured.jpg" alt="A Weekend in Baguio — highland landscape" class="entry-hero-photo">
+
+
+    <!-- ========================
+         ARTICLE BODY
+         ======================== -->
+    <section class="entry-article-section">
+        <div class="container" style="max-width: 780px;">
+
+            <!-- Title + date -->
+            <h1 class="entry-main-title">A Weekend in Baguio</h1>
+            <div class="entry-date-line">
+                <i class="bi bi-calendar3"></i>
+                <span>October 4, 2026</span>
+            </div>
+
+            <hr class="scrap-divider">
+
+            <!-- Article text -->
+            <div class="entry-body-text">
+                <p>
+                    The morning fog rolled through the mountains as we started our walk around
+                    the city. The air was cool and carried the scent of pine trees — a reminder
+                    that we were somewhere truly different from the lowlands. Baguio greets you
+                    the moment you step off the bus: that first breath of cold mountain air, the
+                    sight of green hills disappearing into low clouds, and the sound of the city
+                    waking up at an unhurried highland pace.
+                </p>
+                <p>
+                    We spent the first morning at Burnham Park — rowboats on the lagoon, the
+                    enormous old trees casting long shadows over the stone paths. The park was
+                    quiet, full of joggers and elderly couples doing their morning routines.
+                    There is something about being on the water, even a small lagoon, that slows
+                    a person down.
+                </p>
+                <p>
+                    The Baguio Public Market was next — great heaps of strawberries, bundles of
+                    local vegetables, jars of ube halaya, and peanut brittle from a stall that
+                    had been in one family since the 1980s. We bought more than we could carry.
+                    In the craft section, Cordilleran woven bags and wooden carvings lined the
+                    stalls, each piece carrying the fingerprints of the highlands.
+                </p>
+                <p>
+                    By afternoon we were at Mines View Lookout — the valley dropping away below
+                    us, layered with terraced farms and pine-covered ridges. We stood there
+                    longer than planned. There is something in that view that makes conversation
+                    unnecessary.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================
+         POLAROID PHOTO PAIR + STICKY NOTE
+         ======================== -->
+    <section class="photo-pair-section">
+        <div class="container" style="max-width: 780px;">
+            <div class="row align-items-center g-4">
+
+                <!-- Photo 1 -->
+                <div class="col-5">
+                    <div class="polaroid-frame tilt-left">
+                        <!--
+                            Replace with:
+                            <img src="../images/journal/baguio-burnham.jpg"
+                                 alt="Burnham Park pine trees"
+                                 class="polaroid-photo">
+                        -->
+                        <img src="../images/journal/baguio-burnham.jpg" alt="Pine trees at dawn — Burnham Park" class="polaroid-photo">
+                        <div class="polaroid-label">Pine trees at dawn</div>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="col-5">
+                    <div class="polaroid-frame tilt-right">
+                        <!--
+                            Replace with:
+                            <img src="../images/journal/baguio-mines.jpg"
+                                 alt="Mines View Lookout"
+                                 class="polaroid-photo">
+                        -->
+                        <img src="../images/journal/baguio-mines.jpg" alt="Mines View Lookout" class="polaroid-photo">
+                        <div class="polaroid-label">Mines View Lookout</div>
+                    </div>
+                </div>
+
+                <!-- Sticky note quote -->
+                <div class="col-2 d-flex justify-content-center">
+                    <div class="sticky-note-quote">
+                        Sometimes, the best stories are found far from home.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================
+         BACK TO JOURNAL
+         ======================== -->
+    <section class="parchment-bg" style="padding: 1.5rem 0 3.5rem;">
+        <div class="container" style="max-width: 780px;">
+            <a href="journal.html" class="btn-back-journal">
+                <i class="bi bi-arrow-left"></i> Back to Journal
+            </a>
+        </div>
+    </section>
+
+
+    <!-- ========================
+         FOOTER
+         ======================== -->
+    <footer class="voyage-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">V<span>O</span>YAGE</div>
+                    <p class="footer-tagline mt-1">Discover the Philippines, one journey at a time.</p>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6>Explore</h6>
+                    <ul>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="journal.html">Journal</a></li>
+                        <li><a href="itineraries.html">Itineraries</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6>Regions</h6>
+                    <ul>
+                        <li><a href="luzon.html">Luzon</a></li>
+                        <li><a href="visayas.html">Visayas</a></li>
+                        <li><a href="mindanao.html">Mindanao</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6>Plan</h6>
+                    <ul>
+                        <li><a href="things-to-do.html">Things to Do</a></li>
+                        <li><a href="food-culture.html">Food &amp; Culture</a></li>
+                        <li><a href="explore.html">Explore Philippines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 VOYAGE &nbsp;|&nbsp; ITEW1 Group Project</div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
