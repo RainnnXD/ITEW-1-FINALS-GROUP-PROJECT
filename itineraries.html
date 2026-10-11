@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itineraries — VOYAGE | Philippine Travel Plans</title>
+    <meta name="description" content="Suggested day-by-day travel plans across Luzon, Visayas, and Mindanao. Plan your perfect Philippine trip with VOYAGE.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- VOYAGE Shared CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           ITINERARIES PAGE — SCRAPBOOK / PARCHMENT
+           ============================================ */
+
+        body {
+            background-color: #F5EDD8;
+        }
+
+        .parchment-bg {
+            background-color: #F5EDD8;
+        }
+
+        /* ---- HERO SECTION ---- */
+        .itin-hero {
+            background-color: #F5EDD8;
+            padding: 3.5rem 0 2rem;
+            position: relative;
+            overflow: visible;
+        }
+
+        .itin-hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-style: italic;
+            color: #1B3A5C;
+            line-height: 1.15;
+            margin-bottom: 0.4rem;
+        }
+
+        .itin-hero-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            color: #7A6A50;
+            margin-bottom: 0;
+        }
+
+        /* ---- WAVY SAND EDGE (top and bottom of sections) ---- */
+        .sand-edge-top {
+            width: 100%;
+            height: 55px;
+            background-color: #F5EDD8;
+            clip-path: ellipse(55% 100% at 50% 0%);
+            margin-top: -1px;
+        }
+
+        .sand-edge-bottom {
+            width: 100%;
+            height: 55px;
+            background-color: #F5EDD8;
+            clip-path: ellipse(55% 100% at 50% 100%);
+            margin-bottom: -1px;
+        }
+
+        /* ---- DURATION FILTER PILLS ---- */
+        .filter-section {
+            background-color: #F5EDD8;
+            padding: 0.5rem 0 1.5rem;
+        }
+
+        .duration-pill {
+            display: inline-block;
+            background-color: transparent;
+            color: #1B3A5C;
+            border: 2px solid #C8B88A;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            padding: 0.45rem 1.4rem;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .duration-pill:hover,
+        .duration-pill.active,
+        .nav-link.active.duration-pill {
+            background-color: #1B3A5C;
+            color: #FEFAF2;
+            border-color: #1B3A5C;
+        }
+
+        /* override Bootstrap nav-link active styles */
+        .nav-pills .nav-link.duration-pill.active {
+            background-color: #1B3A5C !important;
+            color: #FEFAF2 !important;
+            border-color: #1B3A5C !important;
+        }
+
+        /* ---- MAIN CONTENT SECTION ---- */
+        .itin-content {
+            background-color: #F5EDD8;
+            padding: 1rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ---- ITINERARY CARD — Side by side ---- */
+        .itin-card-row {
+            background-color: #FEFAF2;
+            border: 1px solid #D9C9A8;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+            margin-bottom: 2rem;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .itin-card-row:hover {
+            box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+            transform: translateY(-3px);
+        }
+
+        /* Photo side */
+        .itin-photo-col {
+            min-height: 280px;
+            position: relative;
+        }
+
+        .itin-photo {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .itin-photo-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: rgba(255,255,255,0.55);
+        }
+
+        /* Details side */
+        .itin-details-col {
+            padding: 1.75rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .itin-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #1B3A5C;
+            margin-bottom: 0.25rem;
+            line-height: 1.3;
+        }
+
+        .itin-card-divider {
+            border: none;
+            border-top: 1px solid #D9C9A8;
+            margin: 0.75rem 0 1rem;
+        }
+
+        .itin-day-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem;
+        }
+
+        .itin-day-list li {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            color: #5A4A30;
+            padding: 0.3rem 0;
+            border-bottom: 1px dashed #E0D0B0;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .itin-day-list li:last-child {
+            border-bottom: none;
+        }
+
+        .itin-day-list li .day-label {
+            font-weight: 700;
+            color: #1B3A5C;
+            min-width: 50px;
+            flex-shrink: 0;
+            font-size: 0.82rem;
+        }
+
+        /* View Full Itinerary button */
+        .btn-view-itin {
+            background-color: #1B3A5C;
+            color: #FEFAF2;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .btn-view-itin:hover {
+            background-color: #2a5580;
+            color: #FEFAF2;
+        }
+
+        /* ---- TROPICAL DECORATIONS ---- */
+        .tropical-leaf-svg {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ---- FOOTER ---- */
+        .voyage-footer {
+            background-color: #122840;
+        }
+
+        /* Responsive */
+        @media (max-width: 767px) {
+            .itin-hero-title { font-size: 2rem; }
+            .itin-photo-col { min-height: 220px; }
+            .itin-photo, .itin-photo-placeholder { min-height: 220px; }
+            .itin-details-col { padding: 1.25rem 1.25rem; }
+        }
+    </style>
+</head>
+<body class="parchment-bg">
+
+   <!-- Navigation Bar -->
+    <!-- ========== NAVBAR (Bootstrap offcanvas on mobile) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-voyage fixed-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">VOYAGE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-end offcanvas-voyage" tabindex="-1" id="mainMenu" aria-labelledby="mainMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="mainMenuLabel">VOYAGE</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="explore.html">Explore Philippines</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="destinations.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a>
+              <ul class="dropdown-menu dropdown-menu-voyage">
+                <li><a class="dropdown-item" href="luzon.html">Luzon</a></li>
+                <li><a class="dropdown-item" href="visayas.html">Visayas</a></li>
+                <li><a class="dropdown-item" href="mindanao.html">Mindanao</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="destinations.html">All destinations</a></li>
+              </ul>
+   
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-terracotta btn-sm" href="plan.html">Plan Your Trip</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+    <!-- ========================
+         HERO
+         ======================== -->
+    <section class="itin-hero">
+
+        <!-- Top-left leaf -->
+        <div style="position:absolute; top:-20px; left:-40px; width:260px; opacity:0.55; pointer-events:none; z-index:0;">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10,180 C30,120 80,80 160,20 C120,60 100,100 80,140 C100,110 130,90 160,20 C100,80 60,130 10,180Z" fill="#3A7D44" opacity="0.75"/>
+                <path d="M5,185 C25,125 70,85 150,25" stroke="#2D6235" stroke-width="1.5" fill="none"/>
+                <path d="M50,170 C30,100 60,50 120,10 C80,60 70,110 50,170Z" fill="#4E9A5A" opacity="0.55"/>
+            </svg>
+        </div>
+
+        <!-- Top-right leaf (flipped) -->
+        <div style="position:absolute; top:-20px; right:-40px; width:260px; opacity:0.55; pointer-events:none; z-index:0; transform:scaleX(-1);">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10,180 C30,120 80,80 160,20 C120,60 100,100 80,140 C100,110 130,90 160,20 C100,80 60,130 10,180Z" fill="#3A7D44" opacity="0.75"/>
+                <path d="M5,185 C25,125 70,85 150,25" stroke="#2D6235" stroke-width="1.5" fill="none"/>
+                <path d="M50,170 C30,100 60,50 120,10 C80,60 70,110 50,170Z" fill="#4E9A5A" opacity="0.55"/>
+            </svg>
+        </div>
+
+        <div class="container position-relative" style="z-index:1;">
+            <h1 class="itin-hero-title">Travel Itineraries</h1>
+            <p class="itin-hero-subtitle">Suggested trips for every kind of traveler.</p>
+        </div>
+    </section>
+
+
+    <!-- ========================
+         DURATION FILTER PILLS
+         ======================== -->
+    <section class="filter-section">
+        <div class="container">
+
+            <!-- Bootstrap Tab Pills — no custom JS needed -->
+            <ul class="nav gap-2 flex-wrap" id="durationTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="duration-pill nav-link" id="tab-all"
+                            data-bs-toggle="pill" data-bs-target="#pane-all"
+                            type="button" role="tab">
+                        All Trips
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="duration-pill nav-link active" id="tab-3"
+                            data-bs-toggle="pill" data-bs-target="#pane-3"
+                            type="button" role="tab">
+                        3 Days
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="duration-pill nav-link" id="tab-5"
+                            data-bs-toggle="pill" data-bs-target="#pane-5"
+                            type="button" role="tab">
+                        5 Days
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="duration-pill nav-link" id="tab-7"
+                            data-bs-toggle="pill" data-bs-target="#pane-7"
+                            type="button" role="tab">
+                        7 Days
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="duration-pill nav-link" id="tab-10"
+                            data-bs-toggle="pill" data-bs-target="#pane-10"
+                            type="button" role="tab">
+                        10+ Days
+                    </button>
+                </li>
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- ========================
+         ITINERARY CARDS (Tab Content)
+         ======================== -->
+    <section class="itin-content">
+        <div class="container position-relative" style="z-index:1;">
+
+            <!-- Bottom-left leaf decoration -->
+            <div style="position:absolute; bottom:0; left:-50px; width:240px; opacity:0.45; pointer-events:none; z-index:0;">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,180 C30,120 80,80 160,20 C120,60 100,100 80,140 C100,110 130,90 160,20 C100,80 60,130 10,180Z" fill="#3A7D44" opacity="0.8"/>
+                    <path d="M5,185 C25,125 70,85 150,25" stroke="#2D6235" stroke-width="1.5" fill="none"/>
+                    <path d="M50,170 C30,100 60,50 120,10 C80,60 70,110 50,170Z" fill="#4E9A5A" opacity="0.5"/>
+                </svg>
+            </div>
+
+            <!-- Bottom-right hibiscus flower -->
+            <div style="position:absolute; bottom:20px; right:-20px; width:130px; opacity:0.55; pointer-events:none; z-index:0;">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="60" cy="28" rx="16" ry="26" fill="#D4478A" opacity="0.8" transform="rotate(0 60 60)"/>
+                    <ellipse cx="60" cy="28" rx="16" ry="26" fill="#E05A9A" opacity="0.7" transform="rotate(72 60 60)"/>
+                    <ellipse cx="60" cy="28" rx="16" ry="26" fill="#D4478A" opacity="0.8" transform="rotate(144 60 60)"/>
+                    <ellipse cx="60" cy="28" rx="16" ry="26" fill="#E05A9A" opacity="0.7" transform="rotate(216 60 60)"/>
+                    <ellipse cx="60" cy="28" rx="16" ry="26" fill="#D4478A" opacity="0.8" transform="rotate(288 60 60)"/>
+                    <circle cx="60" cy="60" r="13" fill="#F5C842"/>
+                    <circle cx="60" cy="60" r="7" fill="#D4A017"/>
+                </svg>
+            </div>
+
+            <div class="tab-content" id="durationTabsContent">
+
+                <!-- ===========================
+                     ALL TRIPS
+                     =========================== -->
+                <div class="tab-pane fade" id="pane-all" role="tabpanel">
+
+                    <!-- Luzon 3-Day -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <!--
+                                    Replace with:
+                                    <img src="../images/luzon/baguio.jpg" alt="3 Days in Luzon" class="itin-photo">
+                                -->
+                                <img src="../images/luzon/baguio.jpg" alt="3 Days in Luzon" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">3 Days in Luzon</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1 —</span> Manila</li>
+                                    <li><span class="day-label">Day 2 —</span> Tagaytay</li>
+                                    <li><span class="day-label">Day 3 —</span> Baguio</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visayas 5-Day -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <img src="../images/visayas/cebu.jpg" alt="5 Days in Visayas" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">5 Days in Visayas</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1 —</span> Cebu City</li>
+                                    <li><span class="day-label">Day 2 —</span> Oslob &amp; Kawasan Falls</li>
+                                    <li><span class="day-label">Day 3 —</span> Bohol — Chocolate Hills</li>
+                                    <li><span class="day-label">Day 4 —</span> Panglao Island</li>
+                                    <li><span class="day-label">Day 5 —</span> Return to Cebu</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mindanao 5-Day -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <img src="../images/mindanao/siargao.jpg" alt="5 Days in Mindanao" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">5 Days in Mindanao</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1 —</span> Arrive in Siargao</li>
+                                    <li><span class="day-label">Day 2 —</span> Cloud 9 Surfing</li>
+                                    <li><span class="day-label">Day 3 —</span> Island Hopping</li>
+                                    <li><span class="day-label">Day 4 —</span> Sohoton Cove</li>
+                                    <li><span class="day-label">Day 5 —</span> Departure</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7-Day Philippines -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <img src="../images/gallery/ph-highlights.jpg" alt="7 Days in the Philippines" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">7 Days in the Philippines</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1–2 —</span> Manila &amp; Intramuros</li>
+                                    <li><span class="day-label">Day 3–4 —</span> Baguio Highlands</li>
+                                    <li><span class="day-label">Day 5 —</span> Fly to Cebu</li>
+                                    <li><span class="day-label">Day 6 —</span> Bohol Day Trip</li>
+                                    <li><span class="day-label">Day 7 —</span> Departure from Cebu</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /pane-all -->
+
+
+                <!-- ===========================
+                     3 DAYS
+                     =========================== -->
+                <div class="tab-pane fade show active" id="pane-3" role="tabpanel">
+
+                    <!-- 3 Days in Luzon -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <!--
+                                    Replace with:
+                                    <img src="../images/luzon/baguio.jpg" alt="3 Days in Luzon" class="itin-photo">
+                                -->
+                                <img src="../images/luzon/baguio.jpg" alt="3 Days in Luzon" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">3 Days in Luzon</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1 —</span> Manila</li>
+                                    <li><span class="day-label">Day 2 —</span> Tagaytay</li>
+                                    <li><span class="day-label">Day 3 —</span> Baguio</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 Days in Batangas -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <!--
+                                    Replace with:
+                                    <img src="../images/luzon/batangas.jpg" alt="3 Days in Batangas" class="itin-photo">
+                                -->
+                                <img src="../images/luzon/batangas.jpg" alt="3 Days in Batangas" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">3 Days in Batangas</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1 —</span> Manila to Batangas</li>
+                                    <li><span class="day-label">Day 2 —</span> Anilao Diving &amp; Laiya Beach</li>
+                                    <li><span class="day-label">Day 3 —</span> Taal Volcano &amp; Return</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 Days in Bohol -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <!--
+                                    Replace with:
+                                    <img src="../images/visayas/bohol.jpg" alt="3 Days in Bohol" class="itin-photo">
+                                -->
+                                <img src="../images/visayas/bohol.jpg" alt="3 Days in Bohol" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">3 Days in Bohol</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1 —</span> Arrive in Tagbilaran</li>
+                                    <li><span class="day-label">Day 2 —</span> Chocolate Hills &amp; Tarsier Sanctuary</li>
+                                    <li><span class="day-label">Day 3 —</span> Panglao Beach &amp; Departure</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /pane-3 -->
+
+
+                <!-- ===========================
+                     5 DAYS
+                     =========================== -->
+                <div class="tab-pane fade" id="pane-5" role="tabpanel">
+
+                    <!-- 5 Days in Visayas -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <img src="../images/visayas/cebu.jpg" alt="5 Days in Visayas" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">5 Days in Visayas</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1 —</span> Cebu City</li>
+                                    <li><span class="day-label">Day 2 —</span> Oslob &amp; Kawasan Falls</li>
+                                    <li><span class="day-label">Day 3 —</span> Bohol — Chocolate Hills</li>
+                                    <li><span class="day-label">Day 4 —</span> Panglao Island</li>
+                                    <li><span class="day-label">Day 5 —</span> Return to Cebu</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 Days in Mindanao -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <img src="../images/mindanao/siargao.jpg" alt="5 Days in Mindanao" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">5 Days in Mindanao</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1 —</span> Arrive in Siargao</li>
+                                    <li><span class="day-label">Day 2 —</span> Cloud 9 Surfing</li>
+                                    <li><span class="day-label">Day 3 —</span> Island Hopping</li>
+                                    <li><span class="day-label">Day 4 —</span> Sohoton Cove</li>
+                                    <li><span class="day-label">Day 5 —</span> Departure</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /pane-5 -->
+
+
+                <!-- ===========================
+                     7 DAYS
+                     =========================== -->
+                <div class="tab-pane fade" id="pane-7" role="tabpanel">
+
+                    <!-- 7 Days Philippines -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <img src="../images/gallery/ph-highlights.jpg" alt="7 Days in the Philippines" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">7 Days in the Philippines</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1–2 —</span> Manila &amp; Intramuros</li>
+                                    <li><span class="day-label">Day 3–4 —</span> Baguio Highlands</li>
+                                    <li><span class="day-label">Day 5 —</span> Fly to Cebu</li>
+                                    <li><span class="day-label">Day 6 —</span> Bohol Day Trip</li>
+                                    <li><span class="day-label">Day 7 —</span> Departure from Cebu</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7 Days Luzon Deep Dive -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <img src="../images/luzon/sagada.jpg" alt="7 Days Luzon Deep Dive" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">7 Days — Luzon Deep Dive</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1 —</span> Manila</li>
+                                    <li><span class="day-label">Day 2–3 —</span> Baguio</li>
+                                    <li><span class="day-label">Day 4 —</span> Sagada</li>
+                                    <li><span class="day-label">Day 5 —</span> Banaue Rice Terraces</li>
+                                    <li><span class="day-label">Day 6 —</span> Vigan Heritage City</li>
+                                    <li><span class="day-label">Day 7 —</span> Return to Manila</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /pane-7 -->
+
+
+                <!-- ===========================
+                     10+ DAYS
+                     =========================== -->
+                <div class="tab-pane fade" id="pane-10" role="tabpanel">
+
+                    <!-- 10 Days Grand Tour -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <img src="../images/gallery/ph-grand.jpg" alt="10 Days Philippine Grand Tour" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">10 Days — Philippine Grand Tour</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1–2 —</span> Manila &amp; Intramuros</li>
+                                    <li><span class="day-label">Day 3–4 —</span> Baguio &amp; Sagada</li>
+                                    <li><span class="day-label">Day 5 —</span> Fly to Cebu</li>
+                                    <li><span class="day-label">Day 6–7 —</span> Cebu &amp; Bohol</li>
+                                    <li><span class="day-label">Day 8–9 —</span> Siargao Island</li>
+                                    <li><span class="day-label">Day 10 —</span> Return to Manila</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14 Days Ultimate Philippines -->
+                    <div class="itin-card-row">
+                        <div class="row g-0">
+                            <div class="col-md-4 itin-photo-col">
+                                <img src="../images/gallery/ph-ultimate.jpg" alt="14 Days Ultimate Philippines" class="itin-photo">
+                            </div>
+                            <div class="col-md-8 itin-details-col">
+                                <h3 class="itin-card-title">14 Days — Ultimate Philippines</h3>
+                                <hr class="itin-card-divider">
+                                <ul class="itin-day-list">
+                                    <li><span class="day-label">Day 1–3 —</span> Manila, Vigan &amp; Ilocos</li>
+                                    <li><span class="day-label">Day 4–5 —</span> Baguio &amp; Cordillera</li>
+                                    <li><span class="day-label">Day 6–7 —</span> Palawan</li>
+                                    <li><span class="day-label">Day 8–9 —</span> Boracay</li>
+                                    <li><span class="day-label">Day 10–11 —</span> Cebu &amp; Bohol</li>
+                                    <li><span class="day-label">Day 12–13 —</span> Siargao &amp; Camiguin</li>
+                                    <li><span class="day-label">Day 14 —</span> Davao &amp; Departure</li>
+                                </ul>
+                                <a href="journal-entry.html" class="btn-view-itin">View Full Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /pane-10 -->
+
+            </div><!-- /tab-content -->
+        </div><!-- /container -->
+    </section>
+
+
+    <!-- ========================
+         FOOTER
+         ======================== -->
+    <footer class="voyage-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">V<span>O</span>YAGE</div>
+                    <p class="footer-tagline mt-1">Discover the Philippines, one journey at a time.</p>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6>Explore</h6>
+                    <ul>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="journal.html">Journal</a></li>
+                        <li><a href="itineraries.html">Itineraries</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6>Regions</h6>
+                    <ul>
+                        <li><a href="luzon.html">Luzon</a></li>
+                        <li><a href="visayas.html">Visayas</a></li>
+                        <li><a href="mindanao.html">Mindanao</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6>Plan</h6>
+                    <ul>
+                        <li><a href="things-to-do.html">Things to Do</a></li>
+                        <li><a href="food-culture.html">Food &amp; Culture</a></li>
+                        <li><a href="explore.html">Explore Philippines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 VOYAGE &nbsp;|&nbsp; ITEW1 Group Project</div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
