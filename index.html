@@ -44,9 +44,6 @@
                 <li><a class="dropdown-item" href="destinations.html">All destinations</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="luzon.html">Luzon</a></li>
-            <li class="nav-item"><a class="nav-link" href="visayas.html">Visayas</a></li>
-            <li class="nav-item"><a class="nav-link" href="mindanao.html">Mindanao</a></li>
             <li class="nav-item"><a class="nav-link" href="journal.html">Journal</a></li>
             <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-terracotta btn-sm" href="plan.html">Plan Your Trip</a></li>
           </ul>
@@ -54,6 +51,66 @@
       </div>
     </div>
   </nav>
+  <main>
+     <!-- ========== HERO ========== -->
+    <header class="hero d-flex align-items-center text-center text-white">
+      <div class="container hero-content">
+        <h1 class="display-3 fw-bold">Discover the Philippines,<br>one journey at a time.</h1>
+        <p class="lead mb-4">Destinations, food, culture, and travel stories from Luzon, Visayas, and Mindanao.</p>
+
+        <form class="hero-search mx-auto" action="destinations.html" method="get" role="search">
+          <label for="destinationSearch" class="visually-hidden">Search destinations</label>
+          <div class="input-group input-group-lg">
+            <input type="search" id="destinationSearch" name="q" class="form-control" placeholder="Search destinations">
+            <button class="btn btn-terracotta px-4" type="submit">Explore</button>
+          </div>
+        </form>
+      </div>
+    </header>
+
+    <!-- ========== THREE ISLANDS ========== -->
+    <section class="section" id="islands" aria-labelledby="islandsHeading">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 id="islandsHeading" class="section-title">Three Islands. Endless Adventures.</h2>
+          <p class="section-sub mx-auto">The Philippines is more than 7,000 islands grouped into three main regions. Pick one to start your trip.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="card island-card h-100">
+              <div class="card-img-top island-img island-luzon" role="img" aria-label="Rice terraces and mountains of Luzon"></div>
+              <div class="card-body">
+                <h3 class="card-title">Luzon</h3>
+                <p class="card-text">Rice terraces, mountain towns, surf coasts, and the capital's busy streets.</p>
+                <a href="luzon.html" class="btn btn-outline-ocean btn-sm">Explore Luzon</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="card island-card h-100">
+              <div class="card-img-top island-img island-visayas" role="img" aria-label="White sand beach in the Visayas"></div>
+              <div class="card-body">
+                <h3 class="card-title">Visayas</h3>
+                <p class="card-text">White-sand beaches, whale sharks, historic churches, and island hopping.</p>
+                <a href="visayas.html" class="btn btn-outline-ocean btn-sm">Explore Visayas</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="card island-card h-100">
+              <div class="card-img-top island-img island-mindanao" role="img" aria-label="Lakes and peaks of Mindanao"></div>
+              <div class="card-body">
+                <h3 class="card-title">Mindanao</h3>
+                <p class="card-text">Surf breaks, mountain peaks, crater lakes, and some of the richest cultures in the country.</p>
+                <a href="mindanao.html" class="btn btn-outline-ocean btn-sm">Explore Mindanao</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
 </body>
 </html>
