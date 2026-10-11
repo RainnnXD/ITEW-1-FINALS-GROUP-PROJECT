@@ -1,116 +1,601 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOYAGE</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Destinations, food, culture, and travel stories from Luzon, Visayas, and Mindanao."
+    />
+    <title>VOYAGE | Discover the Philippines</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet"> 
-</head>
-<body>
-
-    <!-- Navigation Bar -->
-    <!-- ========== NAVBAR (Bootstrap offcanvas on mobile) ========== -->
-  <nav class="navbar navbar-expand-lg navbar-voyage fixed-top" aria-label="Main navigation">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">VOYAGE</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-label="Open menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="offcanvas offcanvas-end offcanvas-voyage" tabindex="-1" id="mainMenu" aria-labelledby="mainMenuLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="mainMenuLabel">VOYAGE</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-1">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="explore.html">Explore Philippines</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="destinations.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a>
-              <ul class="dropdown-menu dropdown-menu-voyage">
-                <li><a class="dropdown-item" href="luzon.html">Luzon</a></li>
-                <li><a class="dropdown-item" href="visayas.html">Visayas</a></li>
-                <li><a class="dropdown-item" href="mindanao.html">Mindanao</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="destinations.html">All destinations</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="journal.html">Journal</a></li>
-            <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-terracotta btn-sm" href="plan.html">Plan Your Trip</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <main>
-     <!-- ========== HERO ========== -->
-    <header class="hero d-flex align-items-center text-center text-white">
-      <div class="container hero-content">
-        <h1 class="display-3 fw-bold">Discover the Philippines,<br>one journey at a time.</h1>
-        <p class="lead mb-4">Destinations, food, culture, and travel stories from Luzon, Visayas, and Mindanao.</p>
-
-        <form class="hero-search mx-auto" action="destinations.html" method="get" role="search">
-          <label for="destinationSearch" class="visually-hidden">Search destinations</label>
-          <div class="input-group input-group-lg">
-            <input type="search" id="destinationSearch" name="q" class="form-control" placeholder="Search destinations">
-            <button class="btn btn-terracotta px-4" type="submit">Explore</button>
-          </div>
-        </form>
-      </div>
-    </header>
-
-    <!-- ========== THREE ISLANDS ========== -->
-    <section class="section" id="islands" aria-labelledby="islandsHeading">
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- ========== NAVBAR ========== -->
+    <nav
+      class="navbar navbar-expand-lg navbar-voyage fixed-top"
+      aria-label="Main navigation"
+    >
       <div class="container">
-        <div class="text-center mb-5">
-          <h2 id="islandsHeading" class="section-title">Three Islands. Endless Adventures.</h2>
-          <p class="section-sub mx-auto">The Philippines is more than 7,000 islands grouped into three main regions. Pick one to start your trip.</p>
-        </div>
+        <a class="navbar-brand" href="index.html">VOYAGE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mainMenu"
+          aria-controls="mainMenu"
+          aria-label="Open menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div class="row g-4">
-          <div class="col-md-4">
-            <article class="card island-card h-100">
-              <div class="card-img-top island-img island-luzon" role="img" aria-label="Rice terraces and mountains of Luzon"></div>
-              <div class="card-body">
-                <h3 class="card-title">Luzon</h3>
-                <p class="card-text">Rice terraces, mountain towns, surf coasts, and the capital's busy streets.</p>
-                <a href="luzon.html" class="btn btn-outline-ocean btn-sm">Explore Luzon</a>
-              </div>
-            </article>
+        <div
+          class="offcanvas offcanvas-end offcanvas-voyage"
+          tabindex="-1"
+          id="mainMenu"
+          aria-labelledby="mainMenuLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mainMenuLabel">VOYAGE</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close menu"
+            ></button>
           </div>
-          <div class="col-md-4">
-            <article class="card island-card h-100">
-              <div class="card-img-top island-img island-visayas" role="img" aria-label="White sand beach in the Visayas"></div>
-              <div class="card-body">
-                <h3 class="card-title">Visayas</h3>
-                <p class="card-text">White-sand beaches, whale sharks, historic churches, and island hopping.</p>
-                <a href="visayas.html" class="btn btn-outline-ocean btn-sm">Explore Visayas</a>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-4">
-            <article class="card island-card h-100">
-              <div class="card-img-top island-img island-mindanao" role="img" aria-label="Lakes and peaks of Mindanao"></div>
-              <div class="card-body">
-                <h3 class="card-title">Mindanao</h3>
-                <p class="card-text">Surf breaks, mountain peaks, crater lakes, and some of the richest cultures in the country.</p>
-                <a href="mindanao.html" class="btn btn-outline-ocean btn-sm">Explore Mindanao</a>
-              </div>
-            </article>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-1">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html" aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="explore.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Explore</a
+                >
+                <ul class="dropdown-menu dropdown-menu-voyage">
+                  <li>
+                    <a class="dropdown-item" href="explore.html"
+                      >Explore Philippines</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="things-to-do.html"
+                      >Things to Do</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="food-culture.html"
+                      >Food &amp; Culture</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="gallery.html"
+                      >Photo Gallery</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="destination.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Destinations</a
+                >
+                <ul class="dropdown-menu dropdown-menu-voyage">
+                  <li><a class="dropdown-item" href="luzon.html">Luzon</a></li>
+                  <li>
+                    <a class="dropdown-item" href="visayas.html">Visayas</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="mindanao.html">Mindanao</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="destination.html"
+                      >All destinations</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="journal.html">Journal</a>
+              </li>
+              <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                <a class="btn btn-terracotta btn-sm" href="itineraries.html"
+                  >Plan Your Trip</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </nav>
 
-</body>
+    <main id="main" tabindex="-1">
+      <!-- ========== HERO (auto-playing carousel background) ========== -->
+      <section
+        class="hero d-flex align-items-center text-center text-white"
+        aria-labelledby="heroHeading"
+      >
+        <div
+          id="heroCarousel"
+          class="carousel slide hero-carousel"
+          data-bs-ride="carousel"
+          data-bs-interval="2800"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Photos of the Philippines"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1: El Nido"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2: Banaue"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3: Bohol"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide-to="3"
+              aria-label="Slide 4: Siargao"
+            ></button>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div
+                class="hero-slide hero-slide-1"
+                role="img"
+                aria-label="Limestone cliffs rising from the lagoons of El Nido"
+              ></div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="hero-slide hero-slide-2"
+                role="img"
+                aria-label="The Banaue rice terraces"
+              ></div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="hero-slide hero-slide-3"
+                role="img"
+                aria-label="Rolling green hills in Bohol"
+              ></div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="hero-slide hero-slide-4"
+                role="img"
+                aria-label="Surf and palm trees on Siargao island"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container hero-content">
+          <h1 id="heroHeading" class="display-2 fw-bold">
+            Mabuhay!
+          </h1>
+          <h1 id="heroHeading" class="display-5 pb-2 fw-bold">
+            Welcome to the Philippines.
+          </h1>
+
+          <p class="lead mb-4 fw-light">
+            Discover the Philippines, one journey at a time. Explore the
+            islands, Destinations, food, culture, and travel stories from Luzon,
+            Visayas, and Mindanao.
+          </p>
+
+          <form
+            class="hero-search mx-auto"
+            action="destination.html"
+            method="get"
+            role="search"
+          >
+            <label for="destinationSearch" class="visually-hidden"
+              >Search destinations</label
+            >
+            <div class="input-group input-group-lg">
+              <input
+                type="search"
+                id="destinationSearch"
+                name="q"
+                class="form-control"
+                placeholder="Search destinations"
+              />
+              <button class="btn btn-terracotta px-4" type="submit">
+                Explore
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ========== THREE ISLANDS ========== -->
+      <section class="section" id="islands" aria-labelledby="islandsHeading">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 id="islandsHeading" class="section-title">
+              Three Islands. Endless Adventures.
+            </h2>
+            <p class="section-sub mx-auto">
+              The Philippines is more than 7,000 islands grouped into three main
+              regions. Pick one to start your trip.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <article class="card island-card h-100">
+                <div
+                  class="card-img-top island-img island-luzon"
+                  role="img"
+                  aria-label="Rice terraces and mountains of Luzon"
+                ></div>
+                <div class="card-body">
+                  <h3 class="card-title">Luzon</h3>
+                  <p class="card-text">
+                    Rice terraces, mountain towns, surf coasts, and the
+                    capital's busy streets.
+                  </p>
+                  <a href="luzon.html" class="btn btn-outline-ocean btn-sm"
+                    >Explore Luzon</a
+                  >
+                </div>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="card island-card h-100">
+                <div
+                  class="card-img-top island-img island-visayas"
+                  role="img"
+                  aria-label="White sand beach in the Visayas"
+                ></div>
+                <div class="card-body">
+                  <h3 class="card-title">Visayas</h3>
+                  <p class="card-text">
+                    White-sand beaches, whale sharks, historic churches, and
+                    island hopping.
+                  </p>
+                  <a href="visayas.html" class="btn btn-outline-ocean btn-sm"
+                    >Explore Visayas</a
+                  >
+                </div>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="card island-card h-100">
+                <div
+                  class="card-img-top island-img island-mindanao"
+                  role="img"
+                  aria-label="Lakes and peaks of Mindanao"
+                ></div>
+                <div class="card-body">
+                  <h3 class="card-title">Mindanao</h3>
+                  <p class="card-text">
+                    Surf breaks, mountain peaks, crater lakes, and some of the
+                    richest cultures in the country.
+                  </p>
+                  <a href="mindanao.html" class="btn btn-outline-ocean btn-sm"
+                    >Explore Mindanao</a
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== FEATURED DESTINATIONS (Carousel) ========== -->
+      <section
+        class="section section-green"
+        id="featured"
+        aria-labelledby="featuredHeading"
+      >
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+              <h2 id="featuredHeading" class="section-title">
+                Postcards from the Philippines
+              </h2>
+              <p class="text-white-75 mb-4">
+                Limestone cliffs, ancient rice terraces, rolling hills, and
+                world-class surf. A few places travelers keep coming back for.
+              </p>
+              <a href="destination.html" class="btn btn-gold btn-lg"
+                >See all destinations</a
+              >
+            </div>
+
+            <div class="col-lg-7">
+              <div class="postcard-frame">
+                <div
+                  id="featuredCarousel"
+                  class="carousel slide"
+                  role="region"
+                  aria-roledescription="carousel"
+                  aria-label="Featured destinations"
+                >
+                  <div class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#featuredCarousel"
+                      data-bs-slide-to="0"
+                      class="active"
+                      aria-current="true"
+                      aria-label="Slide 1: El Nido"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#featuredCarousel"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2: Banaue"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#featuredCarousel"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3: Bohol"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#featuredCarousel"
+                      data-bs-slide-to="3"
+                      aria-label="Slide 4: Siargao"
+                    ></button>
+                  </div>
+
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div
+                        class="slide slide-elnido"
+                        role="img"
+                        aria-label="Limestone cliffs rising from the lagoons of El Nido"
+                      ></div>
+                      <div class="carousel-caption">
+                        <h3>El Nido, Palawan</h3>
+                        <p>Limestone cliffs and hidden lagoons.</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div
+                        class="slide slide-banaue"
+                        role="img"
+                        aria-label="The Banaue rice terraces"
+                      ></div>
+                      <div class="carousel-caption">
+                        <h3>Banaue, Ifugao</h3>
+                        <p>
+                          Rice terraces carved into the Cordillera mountains.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div
+                        class="slide slide-bohol"
+                        role="img"
+                        aria-label="Rolling green hills in Bohol"
+                      ></div>
+                      <div class="carousel-caption">
+                        <h3>Bohol</h3>
+                        <p>Chocolate Hills, tarsiers, and river cruises.</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div
+                        class="slide slide-siargao"
+                        role="img"
+                        aria-label="Surf and palm trees on Siargao island"
+                      ></div>
+                      <div class="carousel-caption">
+                        <h3>Siargao</h3>
+                        <p>
+                          Surf breaks, palm-lined roads, and island hopping.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#featuredCarousel"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous destination</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#featuredCarousel"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next destination</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== JOURNAL TEASER (Polaroids) ========== -->
+      <section class="section" id="journal" aria-labelledby="journalHeading">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 id="journalHeading" class="section-title">From the Journal</h2>
+            <p class="section-sub mx-auto">
+              Stories and snapshots from travelers on the road.
+            </p>
+          </div>
+
+          <div class="row g-5 justify-content-center">
+            <div class="col-sm-8 col-md-4">
+              <a href="journal-entry.html" class="text-decoration-none">
+                <figure class="polaroid tilt-left mb-0">
+                  <div
+                    class="polaroid-img island-luzon"
+                    role="img"
+                    aria-label="Misty rice terraces in the morning"
+                  ></div>
+                  <figcaption class="handwritten">
+                    Cloud-level mornings in the Cordilleras
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+            <div class="col-sm-8 col-md-4 mt-md-5">
+              <a href="journal-entry.html" class="text-decoration-none">
+                <figure class="polaroid mb-0">
+                  <div
+                    class="polaroid-img island-visayas"
+                    role="img"
+                    aria-label="A white sandbar surrounded by clear water"
+                  ></div>
+                  <figcaption class="handwritten">
+                    Boat days, sandbars, and not a plan in sight
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+            <div class="col-sm-8 col-md-4">
+              <a href="journal-entry.html" class="text-decoration-none">
+                <figure class="polaroid tilt-right mb-0">
+                  <div
+                    class="polaroid-img island-mindanao"
+                    role="img"
+                    aria-label="A crater lake surrounded by peaks"
+                  ></div>
+                  <figcaption class="handwritten">
+                    Chasing lakes and peaks in Mindanao
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+          </div>
+
+          <div class="text-center mt-5">
+            <a href="journal.html" class="btn btn-outline-ocean"
+              >Read the journal</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="cta text-center" aria-labelledby="ctaHeading">
+        <div class="container">
+          <h2 id="ctaHeading" class="section-title">
+            Ready to plan your voyage?
+          </h2>
+          <p class="lead mb-4 mx-auto" style="max-width: 560px">
+            Pick a ready-made itinerary, or explore the islands, food, and
+            festivals you care about most.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="itineraries.html" class="btn btn-gold btn-lg"
+              >See itineraries</a
+            >
+            <a href="explore.html" class="btn btn-outline-light btn-lg"
+              >Explore Philippines</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <p class="footer-brand">VOYAGE</p>
+            <p class="mb-0">
+              Discover the Philippines, one journey at a time. Destinations,
+              food, culture, and stories from across the islands.
+            </p>
+          </div>
+          <div class="col-6 col-lg-2 offset-lg-1">
+            <h2 class="footer-head">Explore</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="explore.html">Explore Philippines</a></li>
+              <li><a href="things-to-do.html">Things to Do</a></li>
+              <li><a href="food-culture.html">Food &amp; Culture</a></li>
+              <li><a href="gallery.html">Photo Gallery</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h2 class="footer-head">Destinations</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="luzon.html">Luzon</a></li>
+              <li><a href="visayas.html">Visayas</a></li>
+              <li><a href="mindanao.html">Mindanao</a></li>
+              <li><a href="destination.html">All destinations</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h2 class="footer-head">Plan</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="journal.html">Journal</a></li>
+              <li><a href="itineraries.html">Itineraries</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <p class="small mb-0">&copy; 2026 VOYAGE. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS (navbar offcanvas, dropdowns, carousel, tabs, accordion) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
