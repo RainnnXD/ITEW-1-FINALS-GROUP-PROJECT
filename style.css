@@ -160,8 +160,8 @@ h5,
 }
 
 /* ---------- Image placeholders ----------
-   Each uses a photo from images/ with a color gradient underneath.
-   Drop your photos into images/ using the file names below. */
+Each uses a photo from images/ with a color gradient underneath.
+Drop your photos into images/ using the file names below. */
 .hero {
   /* Fills the first screen, minus the 64px fixed navbar */
   min-height: calc(100vh - 64px);
@@ -202,24 +202,43 @@ h5,
   transition: ease-in-out 0.2s;
   transform: scale(1.03);
 }
-.slide-elnido {
-  background:
-    url("images/elnido.jpg") center / cover,
+/* Hero photos: change the file names here (they are separate from the postcard carousel) */
+.hero-slide-1 {
+  background: url("img/hero1_img.avif") center / cover no-repeat;
+}
+.hero-slide-2 {
+  background: url("img/hero2_img.avif") center / cover no-repeat;
+}
+.hero-slide-3 {
+  background: url("img/hero3_img.avif") center / cover no-repeat;
+}
+.hero-slide-4 {
+  background: url("img/hero4_img.avif") center / cover no-repeat;
+}
+
+.hero-carousel .carousel-indicators {
+  margin-bottom: 1.25rem;
+}
+
+/* Keep the text and search box above the slideshow */
+.hero .hero-content {
+  position: relative;
+  z-index: 1;
+}
+.slide-boracay {
+  background: url("img/boracay.jpg") center / cover,
     linear-gradient(135deg, #1b9aaa, #2f6b4f);
 }
-.slide-banaue {
-  background:
-    url("images/banaue.jpg") center / cover,
+.slide-hulugan-falls {
+  background: url("img/hulugan_falls.jpeg") center / cover,
     linear-gradient(135deg, #5b8c3a, #2f6b4f);
 }
-.slide-bohol {
-  background:
-    url("images/bohol.jpg") center / cover,
+.slide-intramuros {
+  background:url("img/intramuros.jpeg") center / cover,
     linear-gradient(135deg, #a8b45a, #6b8f3e);
 }
-.slide-siargao {
-  background:
-    url("images/siargao.jpg") center / cover,
+.slide-kayangan-lake {
+  background:url("img/kayangan_lake.jpeg") center / cover,
     linear-gradient(135deg, #3fa7b5, #e5b143);
 }
 
@@ -283,30 +302,6 @@ h5,
     rgba(8, 39, 64, 0.35) 0%,
     rgba(8, 39, 64, 0.55) 100%
   );
-}
-
-/* Hero photos: change the file names here (they are separate from the postcard carousel) */
-.hero-slide-1 {
-  background: url("img/hero1_img.avif") center / cover no-repeat;
-}
-.hero-slide-2 {
-  background: url("img/hero2_img.avif") center / cover no-repeat;
-}
-.hero-slide-3 {
-  background: url("img/hero3_img.avif") center / cover no-repeat;
-}
-.hero-slide-4 {
-  background: url("img/hero4_img.avif") center / cover no-repeat;
-}
-
-.hero-carousel .carousel-indicators {
-  margin-bottom: 1.25rem;
-}
-
-/* Keep the text and search box above the slideshow */
-.hero .hero-content {
-  position: relative;
-  z-index: 1;
 }
 
 /* ---------- Sections ---------- */
