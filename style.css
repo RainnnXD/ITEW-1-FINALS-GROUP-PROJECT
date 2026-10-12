@@ -177,18 +177,30 @@ h5,
 }
 .island-luzon {
   background:
-    url("images/luzon.jpg") center / cover,
-    linear-gradient(135deg, #2f6b4f, #8fb98c);
+    url("img/luzon.avif") center / cover,
+    linear-gradient(135deg, #2f6b4f, #e5b143);
+}
+.island-luzon:hover {
+  transition: ease-in-out 0.2s;
+  transform: scale(1.03);
 }
 .island-visayas {
   background:
-    url("images/visayas.jpg") center / cover,
+    url("img/visayas.avif") center / cover,
     linear-gradient(135deg, #1b9aaa, #f3e2b3);
+}
+.island-visayas:hover {
+  transition: ease-in-out 0.2s;
+  transform: scale(1.03);
 }
 .island-mindanao {
   background:
-    url("images/mindanao.jpg") center / cover,
+    url("img/mindanao.jpg") center / cover,
     linear-gradient(135deg, #0e3b5c, #3f8f87);
+}
+.island-mindanao:hover {
+  transition: ease-in-out 0.2s;
+  transform: scale(1.03);
 }
 .slide-elnido {
   background:
