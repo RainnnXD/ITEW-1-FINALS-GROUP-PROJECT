@@ -20,6 +20,7 @@
   --bs-link-hover-color-rgb: 8, 39, 64;
 }
 
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 76px; /* keeps anchored sections clear of the fixed navbar */
@@ -436,8 +437,11 @@ Drop your photos into images/ using the file names below. */
 }
 
 /* ---------- Explore page: overview of Luzon, Visayas, and Mindanao ---------- */
+/* ---------- Explore page: overview of Luzon, Visayas, and Mindanao ---------- */
 .page-hero {
-  min-height: 34vh;
+  /* Fills the first screen, minus the 64px fixed navbar */
+  min-height: calc(100vh - 64px);
+  min-height: calc(100svh - 64px);
   display: flex;
   align-items: center;
   text-align: center;
@@ -463,7 +467,7 @@ Drop your photos into images/ using the file names below. */
 
 .region-img {
   position: relative;
-  min-height: 340px;
+  min-height: clamp(340px, 60vh, 560px);
   border: 10px solid #fff;
   border-radius: 0.35rem;
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
@@ -559,6 +563,7 @@ Drop your photos into images/ using the file names below. */
   }
 }
 
+/* ---------- Improvements ---------- */
 .hero-stats {
   display: flex;
   justify-content: center;
@@ -683,6 +688,18 @@ Drop your photos into images/ using the file names below. */
   }
 }
 
+/* ---------- Full-screen region sections ---------- */
+/* 64px fixed navbar + about 56px sticky region bar */
+html {
+  scroll-padding-top: 124px;
+}
+#luzon,
+#visayas,
+#mindanao {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
 /* ---------- Footer ---------- */
 .footer {
   background: var(--ocean-dark);
@@ -714,7 +731,155 @@ Drop your photos into images/ using the file names below. */
   opacity: 1;
 }
 
-/* ---------- Responsive & motion ---------- */
+.dest-header {
+  position: relative;
+  overflow: hidden;
+  padding: 3.5rem 0 2rem;
+  text-align: center;
+}
+.dest-header .container {
+  position: relative;
+  z-index: 1;
+}
+.dest-header h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin-bottom: 0.4rem;
+}
+.dest-sub {
+  max-width: 520px;
+  margin: 0 auto;
+  color: #55646f;
+  font-size: 1.1rem;
+}
+.leaf {
+  --leaf: clamp(90px, 16vw, 230px);
+  position: absolute;
+  width: var(--leaf);
+  height: var(--leaf);
+  color: var(--green);
+  pointer-events: none;
+}
+.leaf-tl {
+  top: -10px;
+  left: -10px;
+  transform: scaleY(-1);
+}
+.leaf-tr {
+  top: -10px;
+  right: -10px;
+  transform: rotate(180deg);
+  color: var(--green-dark);
+}
+.leaf-br {
+  bottom: 0;
+  right: -10px;
+  transform: scaleX(-1);
+  --leaf: clamp(70px, 11vw, 160px);
+}
+@media (max-width: 575.98px) {
+  .leaf {
+    --leaf: 70px;
+    opacity: 0.55;
+  }
+}
+.dest-shore {
+  position: relative;
+  overflow: hidden;
+  height: 90px;
+}
+.dest-shore::before {
+  content: "";
+  position: absolute;
+  inset: 0 -10%;
+  background: var(--sand);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.dest-tile {
+  position: relative;
+  height: 100%;
+  background: #fff;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(14, 59, 92, 0.12);
+}
+.dest-tile:focus-within {
+  outline: 3px solid var(--ocean);
+  outline-offset: 3px;
+}
+.dest-photo-wrap {
+  position: relative;
+  aspect-ratio: 6 / 5;
+  overflow: hidden;
+}
+.dest-photo {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.4s ease;
+}
+.dest-tile:hover .dest-photo {
+  transform: scale(1.05);
+}
+.dest-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem 1rem;
+}
+.dest-name {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.dest-loc {
+  margin: 0;
+  color: #55646f;
+  font-size: 0.9rem;
+}
+.dest-go {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 2px solid var(--ocean);
+  border-radius: 50%;
+  color: var(--ocean);
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.dest-tile:hover .dest-go,
+.dest-go:focus-visible {
+  background: var(--ocean);
+  color: #fff;
+}
+
+.pagination-voyage {
+  --bs-pagination-color: var(--ocean);
+  --bs-pagination-hover-color: #fff;
+  --bs-pagination-hover-bg: var(--ocean);
+  --bs-pagination-hover-border-color: var(--ocean);
+  --bs-pagination-focus-color: var(--ocean-dark);
+  --bs-pagination-focus-bg: var(--sand);
+  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(229, 177, 67, 0.5);
+  --bs-pagination-active-bg: var(--ocean);
+  --bs-pagination-active-border-color: var(--ocean);
+  --bs-pagination-disabled-color: #6c757d;
+  --bs-pagination-bg: #fff;
+  margin-top: 2.5rem;
+  font-weight: 600;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dest-photo {
+    transition: none;
+  }
+  .dest-tile:hover .dest-photo {
+    transform: none;
+  }
+}
+
 @media (max-width: 991.98px) {
   .navbar-voyage .nav-link {
     font-size: 1.05rem;

@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Browse beaches, mountains, heritage towns, and surf spots across Luzon, Visayas, and Mindanao."
+    />
+    <title>VOYAGE | Destinations</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-voyage fixed-top"
+      aria-label="Main navigation"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">VOYAGE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mainMenu"
+          aria-controls="mainMenu"
+          aria-label="Open menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-end offcanvas-voyage"
+          tabindex="-1"
+          id="mainMenu"
+          aria-labelledby="mainMenuLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mainMenuLabel">VOYAGE</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close menu"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-1">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="explore.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Explore</a
+                >
+                <ul class="dropdown-menu dropdown-menu-voyage">
+                  <li>
+                    <a class="dropdown-item" href="explore.html"
+                      >Explore Philippines</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="things-to-do.html"
+                      >Things to Do</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="itineraries.html"
+                      >Itineraries</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="food-culture.html"
+                      >Food &amp; Culture</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="gallery.html"
+                      >Photo Gallery</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  href="destination.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-current="page"
+                  >Destinations</a
+                >
+                <ul class="dropdown-menu dropdown-menu-voyage">
+                  <li><a class="dropdown-item" href="luzon.html">Luzon</a></li>
+                  <li>
+                    <a class="dropdown-item" href="visayas.html">Visayas</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="mindanao.html">Mindanao</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="destination.html"
+                      >All destinations</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="journal.html">Journal</a>
+              </li>
+              <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                <a class="btn btn-terracotta btn-sm" href="itineraries.html"
+                  >Plan Your Trip</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <header class="dest-header">
+        <svg class="leaf leaf-tl" aria-hidden="true" focusable="false">
+          <use href="#frond" />
+        </svg>
+        <svg class="leaf leaf-tr" aria-hidden="true" focusable="false">
+          <use href="#frond" />
+        </svg>
+        <div class="container">
+          <h1>Featured Destinations</h1>
+          <p class="dest-sub" id="sub">
+            Discover stunning places across the Philippines.
+          </p>
+        </div>
+      </header>
+
+      <section class="section pt-3 pb-4" aria-labelledby="listHeading">
+        <div class="container">
+          <h2 id="listHeading" class="visually-hidden">All destinations</h2>
+          <div class="row g-4" id="grid"></div>
+          <nav aria-label="Destination pages" id="pagerNav">
+            <ul
+              class="pagination pagination-voyage justify-content-center"
+              id="pager"
+            ></ul>
+          </nav>
+        </div>
+      </section>
+
+      <div class="dest-shore" aria-hidden="true">
+        <svg class="leaf leaf-br" focusable="false"><use href="#frond" /></svg>
+      </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <p class="footer-brand">VOYAGE</p>
+            <p class="mb-0">
+              Discover the Philippines, one journey at a time. Destinations,
+              food, culture, and stories from across the islands.
+            </p>
+          </div>
+          <div class="col-6 col-lg-2 offset-lg-1">
+            <h2 class="footer-head">Explore</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="explore.html">Explore Philippines</a></li>
+              <li><a href="things-to-do.html">Things to Do</a></li>
+              <li><a href="food-culture.html">Food &amp; Culture</a></li>
+              <li><a href="gallery.html">Photo Gallery</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h2 class="footer-head">Destinations</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="luzon.html">Luzon</a></li>
+              <li><a href="visayas.html">Visayas</a></li>
+              <li><a href="mindanao.html">Mindanao</a></li>
+              <li><a href="destination.html">All destinations</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h2 class="footer-head">Plan</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="journal.html">Journal</a></li>
+              <li><a href="itineraries.html">Itineraries</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <p class="small mb-0">&copy; 2026 VOYAGE. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS (navbar offcanvas, dropdowns, modal, accordion, alert) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      (() => {
+        const PER_PAGE = 6;
+        const ISLAND = {
+          luzon: ["Luzon", "luzon.html"],
+          visayas: ["Visayas", "visayas.html"],
+          mindanao: ["Mindanao", "mindanao.html"],
+        };
+        const POS = ["20% 30%", "75% 60%", "50% 85%", "10% 65%", "90% 20%"];
+
+        // Page 1 shows these six, in this order. The rest keep their listed order.
+        const FIRST = [
+          "El Nido",
+          "Banaue Rice Terraces",
+          "Boracay",
+          "Cebu",
+          "Siargao",
+          "Davao",
+        ];
+        const DEST = [
+          {
+            n: "Boracay",
+            loc: "Malay, Aklan",
+            r: "visayas",
+            img: "slide-boracay",
+          },
+          {
+            n: "Banaue Rice Terraces",
+            loc: "Ifugao",
+            r: "luzon",
+            img: "island-luzon",
+          },
+          {
+            n: "Siargao",
+            loc: "Surigao del Norte",
+            r: "mindanao",
+            img: "island-mindanao",
+          },
+          { n: "Vigan", loc: "Ilocos Sur", r: "luzon", img: "island-luzon" },
+          {
+            n: "Bohol",
+            loc: "Central Visayas",
+            r: "visayas",
+            img: "island-visayas",
+          },
+          {
+            n: "Camiguin",
+            loc: "Northern Mindanao",
+            r: "mindanao",
+            img: "island-mindanao",
+          },
+          {
+            n: "La Union",
+            loc: "Ilocos Region",
+            r: "luzon",
+            img: "island-luzon",
+          },
+          {
+            n: "Cebu",
+            loc: "Central Visayas",
+            r: "visayas",
+            img: "island-visayas",
+          },
+          {
+            n: "Davao",
+            loc: "Davao Region",
+            r: "mindanao",
+            img: "island-mindanao",
+          },
+          {
+            n: "Sagada",
+            loc: "Mountain Province",
+            r: "luzon",
+            img: "island-luzon",
+          },
+          {
+            n: "Siquijor",
+            loc: "Central Visayas",
+            r: "visayas",
+            img: "island-visayas",
+          },
+          {
+            n: "Mount Apo",
+            loc: "Davao del Sur and Cotabato",
+            r: "mindanao",
+            img: "island-mindanao",
+          },
+          {
+            n: "Hulugan Falls",
+            loc: "Luisiana, Laguna",
+            r: "luzon",
+            img: "slide-hulugan-falls",
+          },
+          {
+            n: "Intramuros",
+            loc: "Manila",
+            r: "luzon",
+            img: "slide-intramuros",
+          },
+          {
+            n: "Kayangan Lake",
+            loc: "Coron, Palawan",
+            r: "luzon",
+            img: "slide-kayangan-lake",
+          },
+          {
+            n: "Malapascua",
+            loc: "Daanbantayan, Cebu",
+            r: "visayas",
+            img: "island-visayas",
+          },
+          { n: "Baler", loc: "Aurora", r: "luzon", img: "island-luzon" },
+          {
+            n: "Lake Sebu",
+            loc: "South Cotabato",
+            r: "mindanao",
+            img: "island-mindanao",
+          },
+          {
+            n: "Taal Volcano",
+            loc: "Batangas",
+            r: "luzon",
+            img: "island-luzon",
+          },
+          {
+            n: "Dumaguete",
+            loc: "Negros Oriental",
+            r: "visayas",
+            img: "island-visayas",
+          },
+          {
+            n: "Samal Island",
+            loc: "Davao del Norte",
+            r: "mindanao",
+            img: "island-mindanao",
+          },
+          { n: "Mayon Volcano", loc: "Albay", r: "luzon", img: "island-luzon" },
+          {
+            n: "Bantayan Island",
+            loc: "Cebu",
+            r: "visayas",
+            img: "island-visayas",
+          },
+          {
+            n: "Bucas Grande",
+            loc: "Socorro, Surigao del Norte",
+            r: "mindanao",
+            img: "island-mindanao",
+          },
+          {
+            n: "Batanes",
+            loc: "Northern Luzon",
+            r: "luzon",
+            img: "island-luzon",
+          },
+          {
+            n: "Iloilo",
+            loc: "Western Visayas",
+            r: "visayas",
+            img: "island-visayas",
+          },
+          {
+            n: "Cagayan de Oro",
+            loc: "Misamis Oriental",
+            r: "mindanao",
+            img: "island-mindanao",
+          },
+          { n: "El Nido", loc: "Palawan", r: "luzon", img: "island-luzon" },
+          {
+            n: "Camotes Islands",
+            loc: "Cebu",
+            r: "visayas",
+            img: "island-visayas",
+          },
+          {
+            n: "Zamboanga City",
+            loc: "Zamboanga Peninsula",
+            r: "mindanao",
+            img: "island-mindanao",
+          },
+        ]
+          .sort(
+            (a, b) =>
+              (FIRST.includes(a.n) ? FIRST.indexOf(a.n) : 99) -
+              (FIRST.includes(b.n) ? FIRST.indexOf(b.n) : 99),
+          )
+          .map((d, i) => ({ ...d, i }));
+
+        const $ = (id) => document.getElementById(id);
+        const grid = $("grid"),
+          pager = $("pager"),
+          sub = $("sub");
+
+        // Links from explore.html arrive as destination.html?q=Siargao
+        const term = (
+          new URLSearchParams(location.search).get("q") || ""
+        ).trim();
+        const match = DEST.filter((d) =>
+          `${d.n} ${d.loc} ${ISLAND[d.r][0]}`
+            .toLowerCase()
+            .includes(term.toLowerCase()),
+        );
+        const list = term && match.length ? match : DEST;
+        if (term) {
+          sub.textContent = match.length
+            ? `Results for \u201c${term}\u201d. `
+            : `No match for \u201c${term}\u201d, so here is everything. `;
+          if (match.length) {
+            const all = document.createElement("a");
+            all.href = "destination.html";
+            all.textContent = "Show all";
+            sub.append(all);
+          }
+        }
+
+        const card = (d) => `
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="dest-tile">
+              <div class="dest-photo-wrap">
+                <div class="dest-photo ${d.img}" ${d.img.startsWith("island") ? `style="background-position:${POS[d.i % 5]}"` : ""} role="img" aria-label="${d.n}, ${d.loc}"></div>
+              </div>
+              <div class="dest-caption">
+                <div>
+                  <h3 class="dest-name">${d.n}</h3>
+                  <p class="dest-loc">${d.loc}</p>
+                </div>
+                <a class="dest-go stretched-link" href="${ISLAND[d.r][1]}" aria-label="${d.n}: more on ${ISLAND[d.r][0]}">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
+                </a>
+              </div>
+            </article>
+          </div>`;
+
+        const item = (label, p, o = {}) => `
+          <li class="page-item${o.active ? " active" : ""}${o.disabled ? " disabled" : ""}">
+            <a class="page-link" href="#grid" data-page="${p}"
+              ${o.aria ? `aria-label="${o.aria}"` : ""}
+              ${o.active ? 'aria-current="page"' : ""}
+              ${o.disabled ? 'tabindex="-1" aria-disabled="true"' : ""}>${label}</a>
+          </li>`;
+
+        let page = 1;
+        function render() {
+          const pages = Math.ceil(list.length / PER_PAGE);
+          const start = (page - 1) * PER_PAGE;
+          grid.innerHTML = list
+            .slice(start, start + PER_PAGE)
+            .map(card)
+            .join("");
+
+          let html = item("&laquo;", page - 1, {
+            disabled: page === 1,
+            aria: "Previous page",
+          });
+          for (let n = 1; n <= pages; n++)
+            html += item(n, n, { active: n === page, aria: `Page ${n}` });
+          html += item("&raquo;", page + 1, {
+            disabled: page === pages,
+            aria: "Next page",
+          });
+          pager.innerHTML = html;
+          $("pagerNav").hidden = pages <= 1;
+        }
+
+        pager.addEventListener("click", (e) => {
+          const a = e.target.closest("[data-page]");
+          if (!a) return;
+          e.preventDefault();
+          if (a.parentElement.classList.contains("disabled")) return;
+          page = +a.dataset.page;
+          render();
+          grid.scrollIntoView();
+        });
+
+        render();
+      })();
+    </script>
+  </body>
+</html>
