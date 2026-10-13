@@ -1254,3 +1254,164 @@ html {
   }
 }
 /* ===== END OF ENRACA'S PAGES ===== */
+
+
+/* =========================
+      DESTINATION CSS
+========================= */
+
+/* =========================
+           HERO
+========================= */
+.hero-luzon {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+        linear-gradient(
+          90deg,
+          rgba(18, 40, 64, 0.88),
+          rgba(18, 40, 64, 0.25)
+        ),
+        url("img/luzon-hero-bg.jpg");
+      background-size: cover;
+      background-position: center;
+}
+
+/* VISAYAS */
+.hero-visayas {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+        linear-gradient(
+          90deg,
+            rgba(18, 40, 64, 0.88),
+            rgba(18, 40, 64, 0.25)
+          ),
+          url("img/visayas-hero-bg.jpg");
+        background-size: cover;
+        background-position: center;
+}
+
+/* MINDANAO */
+.hero-mindanao {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+        linear-gradient(
+          90deg,
+            rgba(18, 40, 64, 0.88),
+            rgba(18, 40, 64, 0.25)
+        ),
+        url("img/mindanao-hero-bg.jpg");
+      background-size: cover;
+      background-position: center;
+}
+
+.hero-luzon h1,
+.hero-visayas h1,
+.hero-mindanao h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(2.7rem, 6vw, 4.7rem);
+    font-weight: bold;
+}
+
+.hero-luzon p,
+.hero-visayas p,
+.hero-mindanao p {
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+.eyebrow {
+    color: #F3D98F;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.btn-explore {
+    background: var(--terracotta);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-explore:hover {
+            background: #D4724A;
+            color: white;
+}
+
+/* =========================
+      DESTINATIONS
+========================= */
+
+.section-title {
+    font-family: Georgia, serif;
+    color: var(--ocean);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.destination-card {
+    height: 100%;
+    background: #FFFDF7;
+    border: 1px solid var(--border-light);
+    transition: transform 0.25s, box-shadow 0.25s;
+    overflow: hidden;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #00000018;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.destination-card h3 {
+    color: var(--ocean);
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+}
+
+.destination-card p {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.7;
+}
+
+.destination-tag {
+    color: var(--terracotta);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* =========================
+       TRAVEL TIPS
+========================= */
+
+.travel-tips {
+    background: #EAE5D7;
+}
+
+.tip-number {
+    color: var(--terracotta);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+        
