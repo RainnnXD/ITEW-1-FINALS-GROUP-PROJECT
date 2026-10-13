@@ -917,7 +917,7 @@ html {
 }
 
 /* ==========================================================
-   MEMBER 4 PAGES: Things to Do, Food & Culture, Photo Gallery
+   ENRACA PAGES: Things to Do, Food & Culture, Photo Gallery
    Paste this at the very bottom of style.css.
    All class names use their own prefixes so nothing collides:
      .pg-*  = shared by my 3 pages (hero)
@@ -1007,32 +1007,33 @@ html {
 /* Photos go in img/. Gradient shows if the file is missing. */
 .td-beach {
   background:
-    url("img/activity-beach.jpg") center / cover,
+    url("img/todo1_Snorkle at Coron, Palawan.jpg") center / cover,
     linear-gradient(135deg, #1b9aaa, #f3e2b3);
 }
 .td-nature {
   background:
-    url("img/activity-nature.jpg") center / cover,
+    url("img/todo2_Hiking at Binabaje Hills, Bohol, Philippines.jpg") center /
+      cover,
     linear-gradient(135deg, #2f6b4f, #8fbf7a);
 }
 .td-heritage {
   background:
-    url("img/activity-heritage.jpg") center / cover,
+    url("img/todo3_Intramuros\,\ Philippines.jpg") center / cover,
     linear-gradient(135deg, #a8b45a, #6b8f3e);
 }
 .td-food {
   background:
-    url("img/activity-food.jpg") center / cover,
+    url("img/todo4_Filipino\ Food.jpg") center / cover,
     linear-gradient(135deg, #b5532d, #e5b143);
 }
 .td-culture {
   background:
-    url("img/activity-culture.jpg") center / cover,
+    url("img/todo5_Dinagyang\ Festival.jpg") center / cover,
     linear-gradient(135deg, #e5b143, #b5532d);
 }
 .td-adventure {
   background:
-    url("img/activity-adventure.jpg") center / cover,
+    url("img/todo6_Kayaking\ Philippines.jpg") center / cover,
     linear-gradient(135deg, #0e3b5c, #3f8f87);
 }
 .td-info {
@@ -1074,32 +1075,32 @@ html {
 }
 .fc-adobo {
   background:
-    url("img/food-adobo.jpg") center / cover,
+    url("img/food1_Adobo.jpg") center / cover,
     linear-gradient(135deg, #5a3a22, #b5532d);
 }
 .fc-lechon {
   background:
-    url("img/food-lechon.jpg") center / cover,
+    url("img/food2_Lechon.jpg") center / cover,
     linear-gradient(135deg, #b5532d, #e5b143);
 }
 .fc-halohalo {
   background:
-    url("img/food-halohalo.jpg") center / cover,
+    url("img/food3_Halo-Halo.jpg") center / cover,
     linear-gradient(135deg, #8a5fb0, #f3e2b3);
 }
 .fc-sisig {
   background:
-    url("img/food-sisig.jpg") center / cover,
+    url("img/food4_Sisig.jpg") center / cover,
     linear-gradient(135deg, #96441f, #e5b143);
 }
 .fc-kinilaw {
   background:
-    url("img/food-kinilaw.jpg") center / cover,
+    url("img/food5_Kinilaw.jpg") center / cover,
     linear-gradient(135deg, #1b9aaa, #f3e2b3);
 }
 .fc-sinigang {
   background:
-    url("img/food-sinigang.jpg") center / cover,
+    url("img/food6_Sinigang.jpg") center / cover,
     linear-gradient(135deg, #2f6b4f, #e5b143);
 }
 
@@ -1206,12 +1207,12 @@ html {
 }
 .gl-intramuros {
   background:
-    url("img/intramuros.jpeg") center / cover,
+    url("img/intramuros.jpg") center / cover,
     linear-gradient(135deg, #a8b45a, #6b8f3e);
 }
 .gl-hulugan {
   background:
-    url("img/hulugan_falls.jpeg") center / cover,
+    url("img/hulugan_falls.jpg") center / cover,
     linear-gradient(135deg, #5b8c3a, #2f6b4f);
 }
 .gl-siargao {
