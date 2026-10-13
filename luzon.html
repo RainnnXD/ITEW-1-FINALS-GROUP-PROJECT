@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover Luzon, Philippines, through its scenic mountains, historic towns, beautiful beaches, local food, and rich Filipino culture. Plan your next adventure with VOYAGE."
+    />
+
+    <title>VOYAGE | Luzon</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav
+      class="navbar navbar-expand-lg navbar-voyage fixed-top"
+      aria-label="Main navigation"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">VOYAGE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mainMenu"
+          aria-controls="mainMenu"
+          aria-label="Open menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-end offcanvas-voyage"
+          tabindex="-1"
+          id="mainMenu"
+          aria-labelledby="mainMenuLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mainMenuLabel">VOYAGE</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close menu"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-1">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="explore.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Explore</a
+                >
+                <ul class="dropdown-menu dropdown-menu-voyage">
+                  <li>
+                    <a class="dropdown-item" href="explore.html"
+                      >Explore Philippines</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="things-to-do.html"
+                      >Things to Do</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="itineraries.html"
+                      >Itineraries</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="food-culture.html"
+                      >Food & Culture</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="gallery.html"
+                      >Photo Gallery</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  href="destination.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Destinations</a
+                >
+                <ul class="dropdown-menu dropdown-menu-voyage">
+                  <li><a class="dropdown-item" href="luzon.html">Luzon</a></li>
+                  <li>
+                    <a class="dropdown-item" href="visayas.html">Visayas</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="mindanao.html">Mindanao</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="destination.html"
+                      >All destinations</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="journal.html">Journal</a>
+              </li>
+              <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                <a class="btn btn-terracotta btn-sm" href="itineraries.html"
+                  >Plan Your Trip</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-luzon">
+        <div class="container py-5">
+
+            <div class="eyebrow">
+                Explore the Philippines · Northern Journeys
+            </div>
+
+            <h1 class="mt-3">
+                Discover Luzon
+            </h1>
+
+            <h5>
+                Mountain mornings, heritage towns & tropical shores
+            </h5>
+
+            <p class="mt-3">
+                From cool mountain air and centuries-old streets to volcanic
+                landscapes and beautiful coastlines, Luzon offers countless
+                ways to explore the Philippines.
+            </p>
+
+            <a href="#destinations" class="btn-explore mt-2">
+                EXPLORE DESTINATIONS 
+            </a>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- DESTINATIONS SECTION -->
+        <section class="container py-5" id="destinations">
+
+            <div class="mb-4">
+                <div class="destination-tag">
+                    Find Your Next Story
+                </div>
+
+                <h2 class="section-title mt-2">
+                    Places to Fall in Love With
+                </h2>
+
+                <p class="text-secondary">
+                    Discover the landscapes, culture, and attractions of Luzon.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- BAGUIO -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="destination-card">
+                        <img
+                            src="img/luzon-baguio.jpg"
+                            alt="Mountain scenery"
+                            loading="lazy"
+                        >
+
+                        <div class="p-4">
+                            <div class="destination-tag">
+                                Mountain Escape
+                            </div>
+
+                            <h3 class="mt-2">Baguio</h3>
+
+                            <p>
+                                Enjoy cool weather, pine trees, beautiful gardens,
+                                and lively local markets in the Summer Capital
+                                of the Philippines.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- BANAUE -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="destination-card">
+                        <img
+                            src="img/luzon-banaue.jpg"
+                            alt="Green landscape"
+                            loading="lazy"
+                        >
+
+                        <div class="p-4">
+                            <div class="destination-tag">
+                                Living Heritage
+                            </div>
+
+                            <h3 class="mt-2">Banaue</h3>
+
+                            <p>
+                                Admire the famous rice terraces and learn about
+                                the traditions and heritage of local communities
+                                in the Cordillera region.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- VIGAN -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="destination-card">
+                        <img
+                            src="img/luzon-vigan.jpg"
+                            alt="Historic architecture"
+                            loading="lazy"
+                        >
+
+                        <div class="p-4">
+                            <div class="destination-tag">
+                                Heritage Town
+                            </div>
+
+                            <h3 class="mt-2">Vigan</h3>
+
+                            <p>
+                                Walk along historic streets, admire preserved
+                                Spanish-colonial architecture, and experience
+                                Ilocano culture and cuisine.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- BATANGAS -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="destination-card">
+                        <img
+                            src="img/luzon-batangas.jpg"
+                            alt="Coastline and blue water"
+                            loading="lazy"
+                        >
+
+                        <div class="p-4">
+                            <div class="destination-tag">
+                                Coastal Days
+                            </div>
+
+                            <h3 class="mt-2">Batangas</h3>
+
+                            <p>
+                                Discover beaches, quiet coves, and snorkeling
+                                spots along the coast. It is a great option
+                                for a relaxing seaside trip.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- BICOL -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="destination-card">
+                        <img
+                            src="img/luzon-bicol.jpg"
+                            alt="Dramatic mountain landscape"
+                            loading="lazy"
+                        >
+
+                        <div class="p-4">
+                            <div class="destination-tag">
+                                Volcano Views
+                            </div>
+
+                            <h3 class="mt-2">Bicol</h3>
+
+                            <p>
+                                See the iconic Mayon Volcano, discover scenic
+                                landscapes, and sample flavorful Bicolano dishes
+                                such as Bicol Express.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- PALAWAN -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="destination-card">
+                        <img
+                            src="img/luzon-palawan.jpg"
+                            alt="Tropical island beach"
+                            loading="lazy"
+                        >
+
+                        <div class="p-4">
+                            <div class="destination-tag">
+                                Island Paradise
+                            </div>
+
+                            <h3 class="mt-2">Palawan</h3>
+
+                            <p>
+                                Explore turquoise lagoons, limestone cliffs,
+                                and beautiful island scenery in one of the
+                                country's well-known travel destinations.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TRAVEL TIPS -->
+        <section class="travel-tips py-5" id="travel-tips">
+            <div class="container">
+
+                <div class="destination-tag">
+                    Before You Go
+                </div>
+
+                <h2 class="section-title mt-2 mb-4">
+                    Travel Notes
+                </h2>
+
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+                        <h5 class="tip-number">01 · Start Early</h5>
+
+                        <p>
+                            Visit popular attractions in the morning for a
+                            more relaxed experience and more time to explore.
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5 class="tip-number">02 · Taste the Region</h5>
+
+                        <p>
+                            Try local favorites such as Vigan empanada,
+                            Bicol Express, and other regional specialties.
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5 class="tip-number">03 · Pack for the Weather</h5>
+
+                        <p>
+                            Bring layers for cooler highlands and light,
+                            comfortable clothing for warm coastal areas.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- OTHER REGIONS -->
+        <section class="container py-5">
+            <h2 class="section-title">
+                Keep Exploring
+            </h2>
+
+            <p class="text-secondary">
+                Three regions, countless journeys. Continue discovering
+                the Philippines.
+            </p>
+
+            <a href="visayas.html" class="btn btn-terracotta me-2 mb-2">
+                EXPLORE VISAYAS
+            </a>
+
+            <a href="mindanao.html" class="btn btn-terracotta mb-2">
+                EXPLORE MINDANAO
+            </a>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <p class="footer-brand">VOYAGE</p>
+            <p class="mb-0">
+              Discover the Philippines, one journey at a time. Destinations,
+              food, culture, and stories from across the islands.
+            </p>
+          </div>
+          <div class="col-6 col-lg-2 offset-lg-1">
+            <h2 class="footer-head">Explore</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="explore.html">Explore Philippines</a></li>
+              <li><a href="things-to-do.html">Things to Do</a></li>
+              <li><a href="food-culture.html">Food &amp; Culture</a></li>
+              <li><a href="gallery.html">Photo Gallery</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h2 class="footer-head">Destinations</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="luzon.html">Luzon</a></li>
+              <li><a href="visayas.html">Visayas</a></li>
+              <li><a href="mindanao.html">Mindanao</a></li>
+              <li><a href="destination.html">All destinations</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h2 class="footer-head">Plan</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="journal.html">Journal</a></li>
+              <li><a href="itineraries.html">Itineraries</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <p class="small mb-0">&copy; 2026 VOYAGE. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Bundle for navbar and dropdown -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
