@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Destinations, food, culture, and travel stories from Luzon, Visayas, and Mindanao."
+    />
+    <title>VOYAGE | Explore the Philippines</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-voyage fixed-top"
+      aria-label="Main navigation"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">VOYAGE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mainMenu"
+          aria-controls="mainMenu"
+          aria-label="Open menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-end offcanvas-voyage"
+          tabindex="-1"
+          id="mainMenu"
+          aria-labelledby="mainMenuLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mainMenuLabel">VOYAGE</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close menu"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-1">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html" aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="explore.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Explore</a
+                >
+                <ul class="dropdown-menu dropdown-menu-voyage">
+                  <li>
+                    <a class="dropdown-item" href="explore.html"
+                      >Explore Philippines</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="things-to-do.html"
+                      >Things to Do</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="itineraries.html"
+                      >Itineraries</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="food-culture.html"
+                      >Food & Culture</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="gallery.html"
+                      >Photo Gallery</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="destination.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Destinations</a
+                >
+                <ul class="dropdown-menu dropdown-menu-voyage">
+                  <li><a class="dropdown-item" href="luzon.html">Luzon</a></li>
+                  <li>
+                    <a class="dropdown-item" href="visayas.html">Visayas</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="mindanao.html">Mindanao</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="destination.html"
+                      >All destinations</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="journal.html">Journal</a>
+              </li>
+              <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                <a class="btn btn-terracotta btn-sm" href="itineraries.html"
+                  >Plan Your Trip</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+      <!-- MAIN PAGE -->
+      <header class="page-hero">
+        <div class="container">
+          <div class="crumb">
+            <a href="index.html">Home</a> & Explore
+          </div>
+          <h1>Explore the Philippines</h1>
+          <p class="lead mb-4">An overview of Luzon, Visayas, and Mindanao.</p>
+          <form
+            class="hero-search mx-auto"
+            action="destination.html"
+            method="get"
+            role="search"
+          >
+            <label for="destinationSearch" class="visually-hidden"
+              >Search destinations</label
+            >
+            <div class="input-group input-group-lg">
+              <input
+                type="search"
+                id="destinationSearch"
+                name="q"
+                class="form-control"
+                placeholder="Search destinations"
+              />
+              <button class="btn btn-terracotta px-4" type="submit">
+                Explore
+              </button>
+            </div>
+          </form>
+          <ul class="hero-stats">
+            <li><b>7,000+</b> islands</li>
+            <li><b>3</b> island groups</li>
+            <li><b>Nov to Apr</b> mostly dry</li>
+          </ul>
+        </div>
+      </header>
+
+      <nav class="region-nav" aria-label="Jump to a section">
+        <div class="container">
+          <a href="#luzon">Luzon</a>
+          <a href="#visayas">Visayas</a>
+          <a href="#mindanao">Mindanao</a>
+          <a href="#glance">At a glance</a>
+        </div>
+      </nav>
+
+      <!-- ========== INTRO ========== -->
+      <section class="section" id="luzon" aria-labelledby="luzonHeading">
+        <div class="container">
+          <div class="row align-items-center g-5 region">
+            <div class="col-lg-6">
+              <div
+                class="region-img island-luzon"
+                role="img"
+                aria-label="Luzon landscape"
+              >
+                <div class="region-stamp" aria-hidden="true">NORTH</div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="region-tag">Northern island group</div>
+              <h2 id="luzonHeading" class="section-title">Luzon</h2>
+              <p>
+                The largest island group, home to the capital, Manila. Go for
+                mountain towns, rice terraces, heritage streets, and surf
+                coasts.
+              </p>
+              <ul class="region-facts">
+                <li>
+                  <b>Known for:</b> Banaue rice terraces, Vigan, Taal Volcano,
+                  Mayon Volcano
+                </li>
+                <li><b>Main gateways:</b> Manila and Clark</li>
+                <li><b>Best time:</b> November to April</li>
+              </ul>
+              <div class="region-chips">
+                <a href="destination.html?q=Banaue">Banaue</a
+                ><a href="destination.html?q=Vigan">Vigan</a
+                ><a href="destination.html?q=La+Union">La Union</a
+                ><a href="destination.html?q=Sagada">Sagada</a
+                ><a href="destination.html?q=Baler">Baler</a>
+              </div>
+              <a href="luzon.html" class="btn btn-outline-ocean"
+                >Explore Luzon</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section section-sand"
+        id="visayas"
+        aria-labelledby="visayasHeading"
+      >
+        <div class="container">
+          <div class="row align-items-center g-5 region region-rev">
+            <div class="col-lg-6 order-lg-2">
+              <div
+                class="region-img island-visayas"
+                role="img"
+                aria-label="Visayas landscape"
+              >
+                <div class="region-stamp" aria-hidden="true">CENTRAL</div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="region-tag">Central island group</div>
+              <h2 id="visayasHeading" class="section-title">Visayas</h2>
+              <p>
+                Hundreds of islands made for hopping. Expect white-sand beaches,
+                whale sharks, old churches, and lively festivals.
+              </p>
+              <ul class="region-facts">
+                <li>
+                  <b>Known for:</b> Boracay, Bohol Chocolate Hills, Oslob whale
+                  sharks, Sinulog
+                </li>
+                <li>
+                  <b>Main gateways:</b> Cebu, Iloilo, Caticlan, and Tagbilaran
+                </li>
+                <li><b>Best time:</b> November to May</li>
+              </ul>
+              <div class="region-chips">
+                <a href="destination.html?q=Boracay">Boracay</a
+                ><a href="destination.html?q=Bohol">Bohol</a
+                ><a href="destination.html?q=Cebu">Cebu</a
+                ><a href="destination.html?q=Siquijor">Siquijor</a
+                ><a href="destination.html?q=Malapascua">Malapascua</a>
+              </div>
+              <a href="visayas.html" class="btn btn-outline-ocean"
+                >Explore Visayas</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="mindanao" aria-labelledby="mindanaoHeading">
+        <div class="container">
+          <div class="row align-items-center g-5 region">
+            <div class="col-lg-6">
+              <div
+                class="region-img island-mindanao"
+                role="img"
+                aria-label="Mindanao landscape"
+              >
+                <div class="region-stamp" aria-hidden="true">SOUTH</div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="region-tag">Southern island group</div>
+              <h2 id="mindanaoHeading" class="section-title">Mindanao</h2>
+              <p>
+                The second-largest island group, with surf breaks, crater lakes,
+                the country's highest peak, and some of its richest cultures.
+              </p>
+              <ul class="region-facts">
+                <li>
+                  <b>Known for:</b> Siargao surfing, Camiguin, Mount Apo,
+                  Kadayawan Festival
+                </li>
+                <li>
+                  <b>Main gateways:</b> Davao, Cagayan de Oro, and Siargao
+                </li>
+                <li>
+                  <b>Best time:</b> Dry for much of the year. Siargao surf peaks
+                  September to November.
+                </li>
+              </ul>
+              <div class="region-chips">
+                <a href="destination.html?q=Siargao">Siargao</a
+                ><a href="destination.html?q=Camiguin">Camiguin</a
+                ><a href="destination.html?q=Davao">Davao</a
+                ><a href="destination.html?q=Lake+Sebu">Lake Sebu</a
+                ><a href="destination.html?q=Mount+Apo">Mount Apo</a>
+              </div>
+              <a href="mindanao.html" class="btn btn-outline-ocean"
+                >Explore Mindanao</a
+              >
+              <p class="note-small">
+                Check current travel advisories for specific areas before you
+                go.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== AT A GLANCE ========== -->
+      <section
+        class="section section-sand"
+        id="glance"
+        aria-labelledby="glanceHeading"
+      >
+        <div class="container">
+          <h2 id="glanceHeading" class="section-title">At a glance</h2>
+          <p class="section-sub">
+            A quick side-by-side to help you choose where to start.
+          </p>
+          <div class="table-responsive glance-wrap">
+            <table class="table glance">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <span class="visually-hidden">Topic</span>
+                  </th>
+                  <th scope="col">Luzon</th>
+                  <th scope="col">Visayas</th>
+                  <th scope="col">Mindanao</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Vibe</td>
+                  <td>Mountains, heritage, city</td>
+                  <td>Beaches and island hopping</td>
+                  <td>Surf, lakes, peaks, culture</td>
+                </tr>
+                <tr>
+                  <td>Best for</td>
+                  <td>Hikes and road trips</td>
+                  <td>First-time visitors</td>
+                  <td>Adventurers</td>
+                </tr>
+                <tr>
+                  <td>Gateway</td>
+                  <td>Manila</td>
+                  <td>Cebu</td>
+                  <td>Davao</td>
+                </tr>
+                <tr>
+                  <td>Best months</td>
+                  <td>Nov to Apr</td>
+                  <td>Nov to May</td>
+                  <td>Varies, surf Sep to Nov</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta text-center" aria-labelledby="ctaHeading">
+        <div class="container">
+          <h2 id="ctaHeading" class="section-title">
+            Ready to plan your voyage?
+          </h2>
+          <p class="lead mb-4 mx-auto" style="max-width: 560px">
+            Pick a ready-made itinerary, or dive into the island group that
+            caught your eye.
+          </p>
+          <a href="itineraries.html" class="btn btn-gold btn-lg"
+            >See itineraries</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <p class="footer-brand">VOYAGE</p>
+            <p class="mb-0">
+              Discover the Philippines, one journey at a time. Destinations,
+              food, culture, and stories from across the islands.
+            </p>
+          </div>
+          <div class="col-6 col-lg-2 offset-lg-1">
+            <h2 class="footer-head">Explore</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="explore.html">Explore Philippines</a></li>
+              <li><a href="things-to-do.html">Things to Do</a></li>
+              <li><a href="food-culture.html">Food &amp; Culture</a></li>
+              <li><a href="gallery.html">Photo Gallery</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h2 class="footer-head">Destinations</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="luzon.html">Luzon</a></li>
+              <li><a href="visayas.html">Visayas</a></li>
+              <li><a href="mindanao.html">Mindanao</a></li>
+              <li><a href="destination.html">All destinations</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h2 class="footer-head">Plan</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="journal.html">Journal</a></li>
+              <li><a href="itineraries.html">Itineraries</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <p class="small mb-0">&copy; 2026 VOYAGE. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS (navbar offcanvas, dropdowns, carousel, tabs, accordion) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swipe / drag for the hero carousel -->
+    <script src="hero-swipe.js"></script>
+    <script src="explore-overview.js"></script>
+  </body>
+</html>
