@@ -179,27 +179,35 @@ Drop your photos into images/ using the file names below. */
   background:
     url("img/luzon.avif") center / cover,
     linear-gradient(135deg, #2f6b4f, #e5b143);
+  transition: ease-in-out 0.2s;
 }
 .island-luzon:hover {
-  transition: ease-in-out 0.2s;
   transform: scale(1.03);
 }
 .island-visayas {
   background:
     url("img/visayas.avif") center / cover,
     linear-gradient(135deg, #1b9aaa, #f3e2b3);
+  transition: ease-in-out 0.2s;
 }
 .island-visayas:hover {
-  transition: ease-in-out 0.2s;
+  transform: scale(1.03);
+}
+
+.region-img.island-visayas {
+  transition: transform 0.2s ease-in-out;
+}
+
+.region-img.island-visayas:hover {
   transform: scale(1.03);
 }
 .island-mindanao {
   background:
     url("img/mindanao.jpg") center / cover,
     linear-gradient(135deg, #0e3b5c, #3f8f87);
+  transition: ease-in-out 0.2s;
 }
 .island-mindanao:hover {
-  transition: ease-in-out 0.2s;
   transform: scale(1.03);
 }
 /* Hero photos: change the file names here (they are separate from the postcard carousel) */
@@ -435,7 +443,6 @@ Drop your photos into images/ using the file names below. */
     var(--ocean);
 }
 
-/* ---------- Explore page: overview of Luzon, Visayas, and Mindanao ---------- */
 /* ---------- Explore page: overview of Luzon, Visayas, and Mindanao ---------- */
 .page-hero {
   /* Fills the first screen, minus the 64px fixed navbar */
