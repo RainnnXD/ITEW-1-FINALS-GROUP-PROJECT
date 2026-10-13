@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Must-try Filipino dishes, festivals, and traditions from Luzon, Visayas, and Mindanao."
+    />
+    <title>VOYAGE | Food &amp; Culture</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Fonts (same as the other pages) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Shared CSS -->
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- ========== NAVBAR (same as index.html; "Explore" is active) ========== -->
+    <nav
+      class="navbar navbar-expand-lg navbar-voyage fixed-top"
+      aria-label="Main navigation"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">VOYAGE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mainMenu"
+          aria-controls="mainMenu"
+          aria-label="Open menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-end offcanvas-voyage"
+          tabindex="-1"
+          id="mainMenu"
+          aria-labelledby="mainMenuLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mainMenuLabel">VOYAGE</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close menu"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-1">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  href="explore.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Explore</a
+                >
+                <ul class="dropdown-menu dropdown-menu-voyage">
+                  <li>
+                    <a class="dropdown-item" href="explore.html"
+                      >Explore Philippines</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="things-to-do.html"
+                      >Things to Do</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="itineraries.html"
+                      >Itineraries</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item active"
+                      href="food-culture.html"
+                      aria-current="page"
+                      >Food &amp; Culture</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="gallery.html"
+                      >Photo Gallery</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="destination.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Destinations</a
+                >
+                <ul class="dropdown-menu dropdown-menu-voyage">
+                  <li><a class="dropdown-item" href="luzon.html">Luzon</a></li>
+                  <li>
+                    <a class="dropdown-item" href="visayas.html">Visayas</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="mindanao.html">Mindanao</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="destination.html"
+                      >All destinations</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="journal.html">Journal</a>
+              </li>
+              <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                <a class="btn btn-terracotta btn-sm" href="itineraries.html"
+                  >Plan Your Trip</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <!-- ========== PAGE HERO ========== -->
+      <header class="pg-hero pg-hero-food text-center text-white">
+        <div class="container">
+          <div class="small mb-2">
+            <a class="link-light" href="index.html">Home</a> /
+            <a class="link-light" href="explore.html">Explore</a> / Food &amp;
+            Culture
+          </div>
+          <h1 class="display-4 fw-bold">Food &amp; Culture</h1>
+          <p class="lead mx-auto mb-4">
+            Taste the flavors. Meet the traditions. Every island has its own
+            story on the plate.
+          </p>
+          <a href="#dishes" class="btn btn-gold btn-lg">See must-try dishes</a>
+        </div>
+      </header>
+
+      <!-- ========== MUST-TRY DISHES ========== -->
+      <section class="section" id="dishes" aria-labelledby="dishesHeading">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 id="dishesHeading" class="section-title">
+              Must-try Filipino dishes
+            </h2>
+            <p class="section-sub mx-auto">
+              A few classics to look for, plus where each one shines.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <article class="card fc-dish h-100">
+                <div
+                  class="fc-photo fc-adobo"
+                  role="img"
+                  aria-label="A bowl of chicken adobo with rice"
+                ></div>
+                <div class="card-body">
+                  <span class="fc-tag">Everywhere</span>
+                  <h3 class="card-title">Adobo</h3>
+                  <p class="card-text mb-0">
+                    Meat braised in vinegar, soy sauce, garlic, and pepper. The
+                    unofficial national dish.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="card fc-dish h-100">
+                <div
+                  class="fc-photo fc-lechon"
+                  role="img"
+                  aria-label="Roasted whole pig, lechon"
+                ></div>
+                <div class="card-body">
+                  <span class="fc-tag">Visayas</span>
+                  <h3 class="card-title">Cebu Lechon</h3>
+                  <p class="card-text mb-0">
+                    Spit-roasted pig with crackling skin, stuffed with
+                    lemongrass and spices.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="card fc-dish h-100">
+                <div
+                  class="fc-photo fc-halohalo"
+                  role="img"
+                  aria-label="A glass of halo-halo dessert"
+                ></div>
+                <div class="card-body">
+                  <span class="fc-tag">Everywhere</span>
+                  <h3 class="card-title">Halo-Halo</h3>
+                  <p class="card-text mb-0">
+                    Shaved ice layered with sweet beans, fruit, leche flan, and
+                    ube ice cream.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="card fc-dish h-100">
+                <div
+                  class="fc-photo fc-sisig"
+                  role="img"
+                  aria-label="Sizzling sisig on a hot plate"
+                ></div>
+                <div class="card-body">
+                  <span class="fc-tag">Luzon</span>
+                  <h3 class="card-title">Sisig</h3>
+                  <p class="card-text mb-0">
+                    Chopped, sizzling pork with onions and chili, born in
+                    Pampanga.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="card fc-dish h-100">
+                <div
+                  class="fc-photo fc-kinilaw"
+                  role="img"
+                  aria-label="Kinilaw, fresh fish cured in vinegar"
+                ></div>
+                <div class="card-body">
+                  <span class="fc-tag">Mindanao</span>
+                  <h3 class="card-title">Kinilaw</h3>
+                  <p class="card-text mb-0">
+                    Fresh fish cured in vinegar or citrus with ginger and chili.
+                    Best eaten by the coast.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="card fc-dish h-100">
+                <div
+                  class="fc-photo fc-sinigang"
+                  role="img"
+                  aria-label="A steaming bowl of sinigang"
+                ></div>
+                <div class="card-body">
+                  <span class="fc-tag">Everywhere</span>
+                  <h3 class="card-title">Sinigang</h3>
+                  <p class="card-text mb-0">
+                    A sour tamarind soup with pork, shrimp, or fish and plenty
+                    of vegetables.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== FESTIVALS ========== -->
+      <section
+        class="section section-green"
+        id="festivals"
+        aria-labelledby="festivalsHeading"
+      >
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 id="festivalsHeading" class="section-title">
+              Festivals &amp; traditions
+            </h2>
+            <p class="text-white-75 mx-auto" style="max-width: 560px">
+              Music, color, and community. Dates shift each year, so check
+              before you book.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-sm-6 col-lg-3">
+              <article class="fc-fest h-100">
+                <div class="fc-fest-head">January</div>
+                <div class="fc-fest-body">
+                  <h3>Sinulog</h3>
+                  <p class="mb-1"><b>Cebu City, Visayas</b></p>
+                  <p class="mb-0">
+                    A grand street parade honoring the Santo Niño.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <article class="fc-fest h-100">
+                <div class="fc-fest-head">January</div>
+                <div class="fc-fest-body">
+                  <h3>Ati-Atihan</h3>
+                  <p class="mb-1"><b>Kalibo, Aklan</b></p>
+                  <p class="mb-0">
+                    Face paint, drums, and tribal costumes fill the streets.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <article class="fc-fest h-100">
+                <div class="fc-fest-head">October</div>
+                <div class="fc-fest-body">
+                  <h3>MassKara</h3>
+                  <p class="mb-1"><b>Bacolod, Negros</b></p>
+                  <p class="mb-0">
+                    Smiling masks and street dancing in the City of Smiles.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <article class="fc-fest h-100">
+                <div class="fc-fest-head">August</div>
+                <div class="fc-fest-body">
+                  <h3>Kadayawan</h3>
+                  <p class="mb-1"><b>Davao City, Mindanao</b></p>
+                  <p class="mb-0">
+                    A thanksgiving for harvest, flowers, and Davao's cultures.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CULTURE TIPS (Bootstrap accordion) ========== -->
+      <section class="section section-sand" aria-labelledby="cultureHeading">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-5">
+              <h2 id="cultureHeading" class="section-title">
+                Eat and travel like a local
+              </h2>
+              <p>
+                A little know-how goes a long way. Filipinos are known for warm
+                hospitality, and small gestures are always appreciated.
+              </p>
+            </div>
+            <div class="col-lg-7">
+              <div class="accordion fc-accordion" id="cultureTips">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#tipOne"
+                      aria-expanded="true"
+                      aria-controls="tipOne"
+                    >
+                      Share the table
+                    </button>
+                  </h3>
+                  <div
+                    id="tipOne"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#cultureTips"
+                  >
+                    <div class="accordion-body">
+                      Meals are often shared. If you are invited to eat, say
+                      yes. Hosts will often insist you take seconds.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#tipTwo"
+                      aria-expanded="false"
+                      aria-controls="tipTwo"
+                    >
+                      Spoon and fork
+                    </button>
+                  </h3>
+                  <div
+                    id="tipTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#cultureTips"
+                  >
+                    <div class="accordion-body">
+                      Most meals use a spoon and fork. The fork pushes food onto
+                      the spoon. Kamayan (eating by hand) is common at
+                      celebrations.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#tipThree"
+                      aria-expanded="false"
+                      aria-controls="tipThree"
+                    >
+                      Respect local customs
+                    </button>
+                  </h3>
+                  <div
+                    id="tipThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#cultureTips"
+                  >
+                    <div class="accordion-body">
+                      Greet elders with "po" and "opo". Ask before photographing
+                      people, and dress modestly when visiting churches and
+                      mosques.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CTA ========== -->
+      <section class="cta text-center" aria-labelledby="ctaHeading">
+        <div class="container">
+          <h2 id="ctaHeading" class="section-title">Hungry for more?</h2>
+          <p class="lead mb-4 mx-auto" style="max-width: 560px">
+            Build a trip around the food you want to try, or see the places
+            where it all comes from.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="itineraries.html" class="btn btn-gold btn-lg"
+              >See itineraries</a
+            >
+            <a href="gallery.html" class="btn btn-outline-light btn-lg"
+              >Photo gallery</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER (same as index.html) ========== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <p class="footer-brand">VOYAGE</p>
+            <p class="mb-0">
+              Discover the Philippines, one journey at a time. Destinations,
+              food, culture, and stories from across the islands.
+            </p>
+          </div>
+          <div class="col-6 col-lg-2 offset-lg-1">
+            <h2 class="footer-head">Explore</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="explore.html">Explore Philippines</a></li>
+              <li><a href="things-to-do.html">Things to Do</a></li>
+              <li><a href="food-culture.html">Food &amp; Culture</a></li>
+              <li><a href="gallery.html">Photo Gallery</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h2 class="footer-head">Destinations</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="luzon.html">Luzon</a></li>
+              <li><a href="visayas.html">Visayas</a></li>
+              <li><a href="mindanao.html">Mindanao</a></li>
+              <li><a href="destination.html">All destinations</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h2 class="footer-head">Plan</h2>
+            <ul class="list-unstyled mb-0">
+              <li><a href="journal.html">Journal</a></li>
+              <li><a href="itineraries.html">Itineraries</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <p class="small mb-0">&copy; 2026 VOYAGE. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS (navbar offcanvas, dropdowns, accordion). No custom JS. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

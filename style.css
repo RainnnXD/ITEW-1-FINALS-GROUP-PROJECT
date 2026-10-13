@@ -915,3 +915,339 @@ html {
     transition: none;
   }
 }
+
+/* ==========================================================
+   MEMBER 4 PAGES: Things to Do, Food & Culture, Photo Gallery
+   Paste this at the very bottom of style.css.
+   All class names use their own prefixes so nothing collides:
+     .pg-*  = shared by my 3 pages (hero)
+     .td-*  = Things to Do
+     .fc-*  = Food & Culture
+     .gl-*  = Photo Gallery
+   ========================================================== */
+
+/* ---------- SHARED: page hero for my 3 pages ---------- */
+.pg-hero {
+  padding: 5rem 0 4.5rem;
+  background:
+    linear-gradient(180deg, rgba(8, 39, 64, 0.45), rgba(8, 39, 64, 0.7)),
+    linear-gradient(135deg, #1b9aaa, #2f6b4f 60%, #0e3b5c);
+}
+.pg-hero h1 {
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+  line-height: 1.15;
+}
+.pg-hero .lead {
+  max-width: 560px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+/* One existing hero photo per page (change the file if you like) */
+.pg-hero-things {
+  background:
+    linear-gradient(180deg, rgba(8, 39, 64, 0.45), rgba(8, 39, 64, 0.7)),
+    url("img/hero1_img.avif") center / cover no-repeat,
+    linear-gradient(135deg, #1b9aaa, #2f6b4f);
+}
+.pg-hero-food {
+  background:
+    linear-gradient(180deg, rgba(8, 39, 64, 0.45), rgba(8, 39, 64, 0.7)),
+    url("img/hero3_img.avif") center / cover no-repeat,
+    linear-gradient(135deg, #b5532d, #e5b143);
+}
+.pg-hero-gallery {
+  background:
+    linear-gradient(180deg, rgba(8, 39, 64, 0.45), rgba(8, 39, 64, 0.7)),
+    url("img/hero4_img.avif") center / cover no-repeat,
+    linear-gradient(135deg, #0e3b5c, #3f8f87);
+}
+
+/* ---------- THINGS TO DO ---------- */
+.td-card {
+  border: 0;
+  border-radius: 0.35rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(14, 59, 92, 0.12);
+  overflow: hidden;
+}
+.td-card .card-body {
+  border-top: 4px solid var(--gold);
+  padding: 1.5rem;
+}
+.td-card .card-title {
+  font-size: 1.35rem;
+  margin-top: 0.4rem;
+}
+.td-photo {
+  height: 210px;
+  transition: transform 0.3s ease;
+}
+.td-card:hover .td-photo {
+  transform: scale(1.04);
+}
+/* clip the zoom so it stays inside the card */
+.td-card {
+  isolation: isolate;
+}
+.td-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+.td-try {
+  font-size: 0.92rem;
+  color: #55646f;
+}
+.td-try b {
+  color: var(--ocean);
+}
+/* Photos go in img/. Gradient shows if the file is missing. */
+.td-beach {
+  background:
+    url("img/activity-beach.jpg") center / cover,
+    linear-gradient(135deg, #1b9aaa, #f3e2b3);
+}
+.td-nature {
+  background:
+    url("img/activity-nature.jpg") center / cover,
+    linear-gradient(135deg, #2f6b4f, #8fbf7a);
+}
+.td-heritage {
+  background:
+    url("img/activity-heritage.jpg") center / cover,
+    linear-gradient(135deg, #a8b45a, #6b8f3e);
+}
+.td-food {
+  background:
+    url("img/activity-food.jpg") center / cover,
+    linear-gradient(135deg, #b5532d, #e5b143);
+}
+.td-culture {
+  background:
+    url("img/activity-culture.jpg") center / cover,
+    linear-gradient(135deg, #e5b143, #b5532d);
+}
+.td-adventure {
+  background:
+    url("img/activity-adventure.jpg") center / cover,
+    linear-gradient(135deg, #0e3b5c, #3f8f87);
+}
+.td-info {
+  background: #fff;
+  border-top: 4px solid var(--gold);
+  border-radius: 0.5rem;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 8px 24px rgba(14, 59, 92, 0.12);
+}
+.td-info li {
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- FOOD & CULTURE ---------- */
+.fc-dish {
+  border: 0;
+  border-radius: 0.9rem;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(14, 59, 92, 0.12);
+}
+.fc-dish .card-body {
+  padding: 1.25rem 1.4rem 1.5rem;
+}
+.fc-dish .card-title {
+  font-size: 1.3rem;
+  margin-top: 0.3rem;
+}
+.fc-photo {
+  aspect-ratio: 4 / 3;
+}
+.fc-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+.fc-adobo {
+  background:
+    url("img/food-adobo.jpg") center / cover,
+    linear-gradient(135deg, #5a3a22, #b5532d);
+}
+.fc-lechon {
+  background:
+    url("img/food-lechon.jpg") center / cover,
+    linear-gradient(135deg, #b5532d, #e5b143);
+}
+.fc-halohalo {
+  background:
+    url("img/food-halohalo.jpg") center / cover,
+    linear-gradient(135deg, #8a5fb0, #f3e2b3);
+}
+.fc-sisig {
+  background:
+    url("img/food-sisig.jpg") center / cover,
+    linear-gradient(135deg, #96441f, #e5b143);
+}
+.fc-kinilaw {
+  background:
+    url("img/food-kinilaw.jpg") center / cover,
+    linear-gradient(135deg, #1b9aaa, #f3e2b3);
+}
+.fc-sinigang {
+  background:
+    url("img/food-sinigang.jpg") center / cover,
+    linear-gradient(135deg, #2f6b4f, #e5b143);
+}
+
+/* Festival cards (no photo needed) */
+.fc-fest {
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 0.35rem;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+.fc-fest-head {
+  background: var(--gold);
+  color: var(--ocean-dark);
+  font-weight: 700;
+  padding: 0.5rem 1.2rem;
+}
+.fc-fest-body {
+  padding: 1.2rem;
+}
+.fc-fest-body h3 {
+  font-size: 1.35rem;
+  color: var(--ocean);
+}
+.fc-fest-body p b {
+  color: var(--terracotta);
+}
+
+/* Culture tips accordion */
+.fc-accordion {
+  --bs-accordion-active-bg: var(--ocean);
+  --bs-accordion-active-color: #fff;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(229, 177, 67, 0.5);
+  --bs-accordion-border-color: #e4dcc6;
+}
+.fc-accordion .accordion-button {
+  font-weight: 600;
+  color: var(--ocean);
+}
+.fc-accordion .accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1);
+}
+
+/* ---------- PHOTO GALLERY ---------- */
+.gl-tabs {
+  gap: 0.5rem;
+}
+.gl-tabs .nav-link {
+  border: 2px solid var(--ocean);
+  border-radius: 50rem;
+  color: var(--ocean);
+  font-weight: 600;
+  padding: 0.35rem 1.2rem;
+}
+.gl-tabs .nav-link:hover {
+  background: var(--sand);
+}
+.gl-tabs .nav-link.active {
+  background: var(--ocean);
+  color: #fff;
+}
+.gl-tile {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 8px solid #fff;
+  border-radius: 0.35rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(14, 59, 92, 0.15);
+}
+.gl-photo {
+  aspect-ratio: 4 / 3;
+  transition: transform 0.4s ease;
+}
+.gl-tile:hover .gl-photo {
+  transform: scale(1.05);
+}
+.gl-tile figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.8rem 0.9rem 0.7rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: linear-gradient(transparent, rgba(8, 39, 64, 0.85));
+}
+/* These reuse the photos your groupmates already added to img/ */
+.gl-boracay {
+  background:
+    url("img/boracay.jpg") center / cover,
+    linear-gradient(135deg, #1b9aaa, #2f6b4f);
+}
+.gl-terraces {
+  background:
+    url("img/hero2_img.avif") center / cover,
+    linear-gradient(135deg, #2f6b4f, #e5b143);
+}
+.gl-mindanao {
+  background:
+    url("img/mindanao.jpg") center / cover,
+    linear-gradient(135deg, #0e3b5c, #3f8f87);
+}
+.gl-intramuros {
+  background:
+    url("img/intramuros.jpeg") center / cover,
+    linear-gradient(135deg, #a8b45a, #6b8f3e);
+}
+.gl-hulugan {
+  background:
+    url("img/hulugan_falls.jpeg") center / cover,
+    linear-gradient(135deg, #5b8c3a, #2f6b4f);
+}
+.gl-siargao {
+  background:
+    url("img/hero4_img.avif") center / cover,
+    linear-gradient(135deg, #1b9aaa, #f3e2b3);
+}
+.gl-kayangan {
+  background:
+    url("img/kayangan_lake.jpeg") center / cover,
+    linear-gradient(135deg, #3fa7b5, #e5b143);
+}
+.gl-bohol {
+  background:
+    url("img/hero3_img.avif") center / cover,
+    linear-gradient(135deg, #5b8c3a, #2f6b4f);
+}
+.gl-visayas {
+  background:
+    url("img/visayas.avif") center / cover,
+    linear-gradient(135deg, #1b9aaa, #f3e2b3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .td-photo,
+  .gl-photo {
+    transition: none;
+  }
+  .td-card:hover .td-photo,
+  .gl-tile:hover .gl-photo {
+    transform: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .pg-hero {
+    padding: 3.5rem 0;
+  }
+}
+/* ===== END OF ENRACA'S PAGES ===== */
