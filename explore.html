@@ -142,13 +142,87 @@
       </div>
     </nav>
 
-      <!-- MAIN PAGE -->
-      <header class="page-hero">
-        <div class="container">
-          <div class="crumb">
-            <a href="index.html">Home</a> & Explore
+    <main>
+      <!-- ========== HERO (auto-playing carousel background) ========== -->
+      <section
+        class="hero d-flex align-items-center text-center text-white"
+        aria-labelledby="heroHeading"
+      >
+        <div
+          id="heroCarousel"
+          class="carousel slide hero-carousel"
+          data-bs-ride="carousel"
+          data-bs-interval="2800"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Photos of the Philippines"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide-to="0" class="active" aria-current="true"
+              aria-label="Slide 1: El Nido"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2: Banaue"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3: Bohol"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide-to="3"
+              aria-label="Slide 4: Siargao"
+            ></button>
           </div>
-          <h1>Explore the Philippines</h1>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div
+                class="hero-slide hero-slide-1"
+                role="img"
+                aria-label="Limestone cliffs rising from the lagoons of El Nido"
+              ></div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="hero-slide hero-slide-2"
+                role="img"
+                aria-label="The Banaue rice terraces"
+              ></div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="hero-slide hero-slide-3"
+                role="img"
+                aria-label="Rolling green hills in Bohol"
+              ></div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="hero-slide hero-slide-4"
+                role="img"
+                aria-label="Surf and palm trees on Siargao island"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container hero-content">
+          <div class="small mb-2">
+            <a class="link-light" href="index.html">Home</a> &amp; Explore
+          </div>
+          <h1 id="heroHeading" class="display-4 fw-bold">
+            Explore the Philippines
+          </h1>
           <p class="lead mb-4">An overview of Luzon, Visayas, and Mindanao.</p>
           <form
             class="hero-search mx-auto"
@@ -170,7 +244,10 @@
               <button class="btn btn-terracotta px-4" type="submit">
                 Explore
               </button>
-      </header>
+            </div>
+          </form>
+        </div>
+      </section>
 
       <nav class="region-nav" aria-label="Jump to a section">
         <div class="container">
