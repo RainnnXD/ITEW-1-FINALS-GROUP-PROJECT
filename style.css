@@ -179,7 +179,7 @@ Drop your photos into images/ using the file names below. */
 }
 .island-luzon {
   background:
-    url("img/destination1_Luzon.avif") center / cover,
+    url("img/luzon.avif") center / cover,
     linear-gradient(135deg, #2f6b4f, #e5b143);
   transition: ease-in-out 0.2s;
 }
@@ -237,23 +237,44 @@ Drop your photos into images/ using the file names below. */
 }
 .slide-boracay {
   background:
-    url("img/destination3_Boracay.jpg") center / cover,
+    url("img/boracay.jpg") center / cover,
     linear-gradient(135deg, #1b9aaa, #2f6b4f);
 }
 .slide-hulugan-falls {
   background:
-    url("img/destination4_Hulugan_Falls.jpeg") center / cover,
+    url("img/hulugan_falls.jpg") center / cover,
     linear-gradient(135deg, #5b8c3a, #2f6b4f);
 }
 .slide-intramuros {
   background:
-    url("img/destination5_Intramuros.jpeg") center / cover,
+    url("img/intramuros.jpg") center / cover,
     linear-gradient(135deg, #a8b45a, #6b8f3e);
 }
 .slide-kayangan-lake {
   background:
-    url("img/destination6_Kayangan Lake.jpeg") center / cover,
+    url("img/kayangan_lake.jpeg") center / cover,
     linear-gradient(135deg, #3fa7b5, #e5b143);
+}
+
+.polaroid-luzon {
+  background:
+    url("img/baguio-featured.jpg") center / cover,
+    linear-gradient(135deg, #2f6b4f, #e5b143);
+  transition: ease-in-out 0.2s;
+}
+
+.polaroid-visayas {
+  background:
+    url("img/visayas-boracay.jpg") center / cover,
+    linear-gradient(135deg, #1b9aaa, #f3e2b3);
+  transition: ease-in-out 0.2s;
+}
+
+.polaroid-mindanao {
+  background:
+    url("img/mindanao-bukidnon.jpg") center / cover,
+    linear-gradient(135deg, #0e3b5c, #3f8f87);
+  transition: ease-in-out 0.2s;
 }
 
 /* ---------- Hero ---------- */
@@ -918,17 +939,6 @@ html {
   }
 }
 
-/* ==========================================================
-   ENRACA PAGES: Things to Do, Food & Culture, Photo Gallery
-   Paste this at the very bottom of style.css.
-   All class names use their own prefixes so nothing collides:
-     .pg-*  = shared by my 3 pages (hero)
-     .td-*  = Things to Do
-     .fc-*  = Food & Culture
-     .gl-*  = Photo Gallery
-   ========================================================== */
-
-/* ---------- SHARED: page hero for my 3 pages ---------- */
 .pg-hero {
   padding: 5rem 0 4.5rem;
   background:

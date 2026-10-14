@@ -195,7 +195,7 @@
             <ul class="list-unstyled mb-0">
               <li><a href="explore.html">Explore Philippines</a></li>
               <li><a href="things-to-do.html">Things to Do</a></li>
-              <li><a href="food-culture.html">Food &amp; Culture</a></li>
+              <li><a href="food-culture.html">Food Culture</a></li>
               <li><a href="gallery.html">Photo Gallery</a></li>
             </ul>
           </div>
@@ -232,7 +232,15 @@
           visayas: ["Visayas", "visayas.html"],
           mindanao: ["Mindanao", "mindanao.html"],
         };
-        const POS = ["20% 30%", "75% 60%", "50% 85%", "10% 65%", "90% 20%"];
+
+        // ------------------------------------------------------------------
+        // IMAGES
+        // IMG_DIR is the folder (relative to this page) that holds the photos.
+        // Use "" if they sit next to destination.html, or e.g. "images/".
+        // Each destination below has a `file:` with its exact file name.
+        // ------------------------------------------------------------------
+        const IMG_DIR = "img/";
+        const photo = (d) => IMG_DIR + encodeURIComponent(d.file);
 
         // Page 1 shows these six, in this order. The rest keep their listed order.
         const FIRST = [
@@ -248,161 +256,181 @@
             n: "Boracay",
             loc: "Malay, Aklan",
             r: "visayas",
-            img: "slide-boracay",
+            file: "destination3_Boracay.jpg",
           },
           {
             n: "Banaue Rice Terraces",
             loc: "Ifugao",
             r: "luzon",
-            img: "island-luzon",
+            file: "destination2_Banaue Rice Terraces.jpg",
           },
           {
             n: "Siargao",
             loc: "Surigao del Norte",
             r: "mindanao",
-            img: "island-mindanao",
+            file: "destination5_Siargao.jpg",
           },
-          { n: "Vigan", loc: "Ilocos Sur", r: "luzon", img: "island-luzon" },
+          {
+            n: "Vigan",
+            loc: "Ilocos Sur",
+            r: "luzon",
+            file: "destination7_Vigan City.jpg",
+          },
           {
             n: "Bohol",
             loc: "Central Visayas",
             r: "visayas",
-            img: "island-visayas",
+            file: "destination8_Bohol.jpg",
           },
           {
             n: "Camiguin",
             loc: "Northern Mindanao",
             r: "mindanao",
-            img: "island-mindanao",
+            file: "destination9_Camiguin.jpg",
           },
           {
             n: "La Union",
             loc: "Ilocos Region",
             r: "luzon",
-            img: "island-luzon",
+            file: "destination10_La union.jpg",
           },
           {
             n: "Cebu",
             loc: "Central Visayas",
             r: "visayas",
-            img: "island-visayas",
+            file: "destination4_Simala Church, Cebu.jpg",
           },
           {
             n: "Davao",
             loc: "Davao Region",
             r: "mindanao",
-            img: "island-mindanao",
+            file: "destination6_Davao.jpg",
           },
           {
             n: "Sagada",
             loc: "Mountain Province",
             r: "luzon",
-            img: "island-luzon",
+            file: "destination11_Sagada Mt_ Province, Philippines.jpg",
           },
           {
             n: "Siquijor",
             loc: "Central Visayas",
             r: "visayas",
-            img: "island-visayas",
+            file: "destination12_Siquijor.jpg",
           },
           {
             n: "Mount Apo",
             loc: "Davao del Sur and Cotabato",
             r: "mindanao",
-            img: "island-mindanao",
+            file: "destination13_Mt Apo.jpg",
           },
           {
             n: "Hulugan Falls",
             loc: "Luisiana, Laguna",
             r: "luzon",
-            img: "slide-hulugan-falls",
+            file: "destination14_Hulugan Falls.jpg",
           },
           {
             n: "Intramuros",
             loc: "Manila",
             r: "luzon",
-            img: "slide-intramuros",
+            file: "destination15_Intramuros.jpg",
           },
           {
             n: "Kayangan Lake",
             loc: "Coron, Palawan",
             r: "luzon",
-            img: "slide-kayangan-lake",
+            file: "destination16_Kayangan Lake.jpg",
           },
           {
             n: "Malapascua",
             loc: "Daanbantayan, Cebu",
             r: "visayas",
-            img: "island-visayas",
+            file: "destination17_Malapascua Island.jpg",
           },
-          { n: "Baler", loc: "Aurora", r: "luzon", img: "island-luzon" },
+          {
+            n: "Baler",
+            loc: "Aurora",
+            r: "luzon",
+            file: "destination18_Baler.jpg",
+          },
           {
             n: "Lake Sebu",
             loc: "South Cotabato",
             r: "mindanao",
-            img: "island-mindanao",
+            file: "destination19_Lake Sebu.jpg",
           },
           {
             n: "Taal Volcano",
             loc: "Batangas",
             r: "luzon",
-            img: "island-luzon",
+            file: "destination20_Taal Volcano.jpg",
           },
           {
             n: "Dumaguete",
             loc: "Negros Oriental",
             r: "visayas",
-            img: "island-visayas",
+            file: "destination21_Dumaguete Cathedral Belfry.jpg",
           },
           {
             n: "Samal Island",
             loc: "Davao del Norte",
             r: "mindanao",
-            img: "island-mindanao",
+            file: "destination23_Samal Island.jpg",
           },
-          { n: "Mayon Volcano", loc: "Albay", r: "luzon", img: "island-luzon" },
+          {
+            n: "Mayon Volcano",
+            loc: "Albay",
+            r: "luzon",
+            file: "destination22_Mayon Volcano.jpg",
+          },
           {
             n: "Bantayan Island",
             loc: "Cebu",
             r: "visayas",
-            img: "island-visayas",
+            file: "destination24_Bantayan Island.jpg",
           },
           {
             n: "Bucas Grande",
             loc: "Socorro, Surigao del Norte",
             r: "mindanao",
-            img: "island-mindanao",
+            file: "destination25_Bucas Grande, Surigao del Norte.jpg",
           },
           {
             n: "Batanes",
             loc: "Northern Luzon",
             r: "luzon",
-            img: "island-luzon",
+            file: "destination26_Batanes.jpg",
           },
           {
             n: "Iloilo",
             loc: "Western Visayas",
             r: "visayas",
-            img: "island-visayas",
+            file: "destination27_Iloilo City.jpg",
           },
           {
             n: "Cagayan de Oro",
             loc: "Misamis Oriental",
             r: "mindanao",
-            img: "island-mindanao",
+            file: "destination28_Cagayan de Oro.jpg",
           },
-          { n: "El Nido", loc: "Palawan", r: "luzon", img: "island-luzon" },
+          {
+            n: "El Nido",
+            loc: "Palawan",
+            r: "luzon",
+            file: "destination1_El Nido.jpg",
+          },
           {
             n: "Camotes Islands",
             loc: "Cebu",
             r: "visayas",
-            img: "island-visayas",
+            file: "destination29_Camotes Island.jpg",
           },
           {
             n: "Zamboanga City",
             loc: "Zamboanga Peninsula",
             r: "mindanao",
-            img: "island-mindanao",
+            file: "destination30_Zamboanga.jpg",
           },
         ]
           .sort(
@@ -443,7 +471,7 @@
           <div class="col-12 col-sm-6 col-lg-4">
             <article class="dest-tile">
               <div class="dest-photo-wrap">
-                <div class="dest-photo ${d.img}" ${d.img.startsWith("island") ? `style="background-position:${POS[d.i % 5]}"` : ""} role="img" aria-label="${d.n}, ${d.loc}"></div>
+                <div class="dest-photo" style="background-image:url('${photo(d)}');background-size:cover;background-position:center" role="img" aria-label="${d.n}, ${d.loc}"></div>
               </div>
               <div class="dest-caption">
                 <div>
