@@ -780,6 +780,10 @@ html {
   color: #55646f;
   font-size: 1.1rem;
 }
+
+.dest-heading {
+  background:white;
+}
 .leaf {
   --leaf: clamp(90px, 16vw, 230px);
   position: absolute;
