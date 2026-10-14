@@ -1542,3 +1542,786 @@ html {
     url("img/mindanao-zam.jpg") center / cover,
     linear-gradient(135deg, #2f6b4f, #e5b143);
 }
+
+/* ============================================
+      JOURNAL PAGE — SCRAPBOOK AESTHETIC
+============================================ */
+/* ---- HERO SECTION ---- */
+.journal-hero {
+   background-color: #F5EDD8;
+   padding: 3.5rem 0 1rem;
+   position: relative;
+   overflow: hidden;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-style: italic;
+    color: #1B3A5C;
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+}
+
+.hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #5A4A30;
+    margin-bottom: 0;
+}
+
+/* ---- NOTEBOOK FEATURED SECTION ---- */
+.notebook-section {
+    background-color: #F5EDD8;
+    padding: 2rem 0 3rem;
+    position: relative;
+}
+
+/* The notebook card itself */
+.notebook-card {
+    background-color: #FEFAF2;
+    border: 1px solid #D9C9A8;
+    border-radius: 6px;
+    box-shadow:
+        0 4px 20px rgba(0,0,0,0.1),
+        inset 0 0 0 8px #F0E6CC,
+        inset 0 0 0 9px #D9C9A8;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Notebook lines on the right side */
+.notebook-card::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    right: 0;
+    width: 55%;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 27px,
+      rgba(180,160,120,0.25) 27px,
+      rgba(180,160,120,0.25) 28px
+    );
+      pointer-events: none;
+}
+
+/* Red margin line */
+.notebook-card::after {
+     content: '';
+     position: absolute;
+     top: 0; bottom: 0;
+     left: 46%;
+     width: 2px;
+     background-color: rgba(220, 120, 100, 0.3);
+     pointer-events: none;
+}
+
+.notebook-photo {
+     width: 100%;
+     height: 260px;
+     object-fit: cover;
+     border-radius: 3px;
+     box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+}
+
+.notebook-photo-placeholder {
+      width: 100%;
+      height: 260px;
+      border-radius: 3px;
+      box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #3A7D44 0%, #1B3A5C 100%);
+      flex-direction: column;
+      color: white;
+}
+
+.featured-entry-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #1B3A5C;
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+}
+
+.featured-entry-date {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.82rem;
+      color: #888;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+}
+
+        .featured-entry-text {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.88rem;
+            color: #5A4A30;
+            line-height: 1.8;
+        }
+
+        /* Sticky note / postcard element */
+        .sticky-note {
+            background-color: #F5E6C0;
+            border: 1px solid #D9C089;
+            border-radius: 2px;
+            padding: 1rem 1.25rem;
+            box-shadow: 2px 3px 8px rgba(0,0,0,0.12), -1px -1px 0 rgba(0,0,0,0.05);
+            transform: rotate(2deg);
+            font-family: 'Caveat', cursive;
+            font-size: 1rem;
+            color: #5A4A30;
+            line-height: 1.5;
+            max-width: 200px;
+            margin-left: auto;
+        }
+
+        /* ---- READ MORE BUTTON ---- */
+        .btn-read-more {
+            background-color: #1B3A5C;
+            color: #FEFAF2;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 0.6rem 1.75rem;
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-read-more:hover {
+            background-color: #2a5580;
+            color: #FEFAF2;
+        }
+
+        /* ---- MORE JOURNAL ENTRIES SECTION ---- */
+        .entries-section {
+            background-color: #F5EDD8;
+            padding: 2.5rem 0 4rem;
+            position: relative;
+        }
+
+        .entries-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #1B3A5C;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Polaroid-style card */
+        .polaroid-card {
+            background-color: #FEFAF2;
+            border: 1px solid #D9C9A8;
+            border-radius: 2px;
+            padding: 0.6rem 0.6rem 1rem 0.6rem;
+            box-shadow: 2px 4px 12px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: block;
+}
+
+.polaroid-card:hover {
+            transform: translateY(-4px) rotate(0.5deg);
+            box-shadow: 4px 8px 20px rgba(0,0,0,0.16);
+}
+
+.polaroid-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+}
+
+.polaroid-img-placeholder {
+            width: 100%;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+}
+
+.polaroid-caption {
+            padding: 0.7rem 0.3rem 0.1rem;
+}
+
+.polaroid-caption .entry-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            color: #1B3A5C;
+            margin-bottom: 0.2rem;
+            line-height: 1.3;
+        }
+
+.polaroid-caption .entry-meta {
+            font-family: 'Caveat', cursive;
+            font-size: 0.88rem;
+            color: #888;
+}
+
+/* Slight rotation on alternating cards */
+.polaroid-card.tilt-l { transform: rotate(-1.2deg); }
+.polaroid-card.tilt-r { transform: rotate(1deg); }
+.polaroid-card.tilt-l:hover { transform: rotate(0deg) translateY(-4px); }
+.polaroid-card.tilt-r:hover { transform: rotate(0deg) translateY(-4px); }
+
+      
+/* ============================================
+  JOURNAL ENTRY PAGE — SCRAPBOOK AESTHETIC
+============================================ */
+.journal-hero,
+.itin-hero {
+  padding: 3.5rem 0 2rem;
+  text-align: center;
+  background: transparent;
+}
+.journal-hero .hero-title,
+.itin-hero .itin-hero-title {
+  font-family: "Frances", Georgia, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  color: var(--ocean);
+  margin-bottom: 0.4rem;
+}
+.journal-hero .hero-subtitle,
+.itin-hero .itin-hero-subtitle {
+  max-width: 520px;
+  margin: 0 auto;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-style: normal;
+  font-size: 1.1rem;
+  color: #55646f;
+}
+ 
+ 
+/* ================================
+            JOURNAL PAGE
+================================= */
+ 
+/* ---------- Featured entry (same look as .island-card) ---------- */
+.notebook-section {
+  padding: 1rem 0 4rem;
+  background: transparent;
+}
+.notebook-card {
+  background: #fff;
+  border: 0;
+  border-top: 4px solid var(--gold);
+  border-radius: 0.35rem;
+  box-shadow: 0 8px 24px rgba(14, 59, 92, 0.12);
+  padding: 1.75rem;
+}
+.notebook-card .notebook-photo {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0.35rem;
+}
+.notebook-card .featured-entry-title {
+  font-family: "Frances", Georgia, serif;
+  font-size: 1.5rem; /* same as .island-card .card-title */
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ocean);
+  margin-bottom: 0.4rem;
+}
+.notebook-card .featured-entry-date {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: #55646f;
+}
+.notebook-card .featured-entry-date i {
+  color: var(--terracotta);
+}
+.notebook-card .featured-entry-text {
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+ 
+/* Handwritten sticky note */
+.notebook-card .sticky-note {
+  background: #f6e2b0;
+  border: 0;
+  border-radius: 2px;
+  padding: 1rem 1.25rem;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  transform: rotate(2deg);
+  font-family: "Caveat", cursive;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--ocean);
+}
+ 
+/* Buttons */
+.btn-read-more {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: var(--terracotta);
+  color: #fff;
+  border: 1px solid var(--terracotta);
+  border-radius: 0.375rem;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.btn-read-more:hover {
+  background: var(--terracotta-dark);
+  border-color: var(--terracotta-dark);
+  color: #fff;
+}
+ 
+
+.entries-section {
+  padding: 5rem 0;
+  background: var(--sand); /* same as .section-sand */
+}
+.entries-section .entries-heading {
+  font-family: "Frances", Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem); 
+  font-weight: 700;
+  color: var(--ocean);
+  margin-bottom: 2rem;
+}
+.entries-section .polaroid-card {
+  position: relative;
+  display: block;
+  height: 100%;
+  background: #fff;
+  padding: 0.9rem 0.9rem 1.2rem;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.entries-section .polaroid-card::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 90px;
+  height: 26px;
+  margin-left: -45px;
+  background: rgba(229, 177, 67, 0.65);
+  transform: rotate(-3deg);
+}
+.entries-section .polaroid-card.tilt-l {
+  transform: rotate(-2deg);
+}
+.entries-section .polaroid-card.tilt-r {
+  transform: rotate(2deg);
+}
+.entries-section .polaroid-card:hover,
+.entries-section .polaroid-card.tilt-l:hover,
+.entries-section .polaroid-card.tilt-r:hover {
+  transform: rotate(0) translateY(-4px);
+  color: inherit;
+}
+.entries-section .polaroid-card .polaroid-img {
+  display: block;
+  width: 100%;
+  height: 240px; 
+  object-fit: cover;
+}
+.entries-section .polaroid-caption {
+  padding: 0;
+}
+.entries-section .polaroid-caption .entry-title {
+  margin: 1rem 0.3rem 0;
+  font-family: "Frances", Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ocean);
+}
+.entries-section .polaroid-caption .entry-meta {
+  margin: 0.1rem 0.3rem 0;
+  font-family: "Caveat", cursive;
+  font-size: 1.6rem; /* same as .handwritten */
+  line-height: 1.2;
+  color: var(--ocean);
+}
+ 
+ 
+/* =========================
+     JOURNAL ENTRY PAGE
+========================= */
+ 
+.entry-hero-photo {
+  display: block;
+  width: 100%;
+  height: clamp(260px, 45vh, 440px);
+  object-fit: cover;
+  background: linear-gradient(135deg, #2f6b4f, #0e3b5c);
+}
+ 
+.entry-article-section {
+  padding: 3rem 0 1rem;
+  background: transparent;
+}
+.entry-article-section .entry-main-title {
+  font-family: "Frances", Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ocean);
+  margin-bottom: 0.5rem;
+}
+.entry-article-section .entry-date-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 0.95rem;
+  color: #55646f;
+}
+.entry-article-section .entry-date-line i {
+  color: var(--terracotta);
+}
+.entry-article-section .scrap-divider {
+  height: 4px; 
+  margin: 1.25rem 0 1.75rem;
+  border: 0;
+  opacity: 1;
+  background: var(--gold);
+}
+.entry-article-section .entry-body-text p {
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+ 
+/* -- Polaroid pair + sticky note -- */
+.photo-pair-section {
+  padding: 2rem 0 2.5rem;
+  background: transparent;
+}
+.photo-pair-section .polaroid-frame {
+  position: relative;
+  display: block;
+  background: #fff;
+  padding: 0.9rem 0.9rem 1.2rem;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease;
+}
+.photo-pair-section .polaroid-frame::before {
+  /* tape */
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 90px;
+  height: 26px;
+  margin-left: -45px;
+  background: rgba(229, 177, 67, 0.65);
+  transform: rotate(-3deg);
+}
+.photo-pair-section .polaroid-frame.tilt-left {
+  transform: rotate(-2deg);
+}
+.photo-pair-section .polaroid-frame.tilt-right {
+  transform: rotate(2deg);
+}
+.photo-pair-section .polaroid-frame:hover {
+  transform: rotate(0) translateY(-4px);
+}
+.photo-pair-section .polaroid-photo {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.photo-pair-section .polaroid-label {
+  margin: 1rem 0.3rem 0;
+  padding: 0;
+  font-family: "Caveat", cursive;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  text-align: left;
+  color: var(--ocean);
+}
+.photo-pair-section .sticky-note-quote {
+  position: relative;
+  max-width: 220px;
+  background: #f6e2b0;
+  border: 0;
+  border-radius: 2px;
+  padding: 1rem 1.25rem;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  transform: rotate(2deg);
+  font-family: "Caveat", cursive;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: var(--ocean);
+}
+.photo-pair-section .sticky-note-quote::after {
+  /* folded corner */
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: 0 0 16px 16px;
+  border-color: transparent transparent var(--gold) transparent;
+}
+ 
+/* Back button — same as .btn-outline-ocean */
+.btn-back-journal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background: transparent;
+  color: var(--ocean);
+  border: 2px solid var(--ocean);
+  border-radius: 0.375rem;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.btn-back-journal:hover {
+  background: var(--ocean);
+  color: #fff;
+}
+ 
+ 
+/* ================================
+          ITINERARIES
+==================================*/
+ 
+.filter-section {
+  padding: 0 0 2rem;
+  background: transparent;
+}
+.filter-section #durationTabs {
+  justify-content: center;
+  gap: 0.5rem;
+}
+.filter-section .duration-pill {
+  padding: 0.35rem 1.2rem;
+  background: transparent;
+  color: var(--ocean);
+  border: 2px solid var(--ocean);
+  border-radius: 50rem;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.filter-section .duration-pill:hover {
+  background: var(--sand);
+  color: var(--ocean);
+  border-color: var(--ocean);
+}
+.filter-section .duration-pill.active,
+.filter-section .nav-link.duration-pill.active {
+  background: var(--ocean);
+  color: #fff;
+  border-color: var(--ocean);
+}
+ 
+/* ---------- Itinerary cards (same as .td-card / .island-card) ---------- */
+.itin-content {
+  padding: 4rem 0 5rem;
+  background: var(--sand); /* same as .section-sand */
+  overflow: visible;
+}
+.itin-content .itin-card-row {
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background: #fff;
+  border: 0;
+  border-radius: 0.35rem;
+  box-shadow: 0 8px 24px rgba(14, 59, 92, 0.12);
+}
+.itin-content .itin-card-row:last-child {
+  margin-bottom: 0;
+}
+.itin-content .itin-photo-col {
+  position: relative;
+  min-height: 230px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1b9aaa, #2f6b4f);
+}
+.itin-content .itin-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* same zoom as .td-photo */
+}
+.itin-content .itin-card-row:hover .itin-photo {
+  transform: scale(1.04);
+}
+.itin-content .itin-details-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+  border-top: 4px solid var(--gold);
+}
+.itin-content .itin-card-title {
+  font-family: "Frances", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ocean);
+  margin-bottom: 0.25rem;
+}
+.itin-content .itin-card-divider {
+  margin: 0.75rem 0 1rem;
+  border: 0;
+  border-top: 1px solid var(--border-light);
+  opacity: 1;
+}
+.itin-content .itin-day-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+.itin-content .itin-day-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed var(--border-light);
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 1rem;
+  color: var(--ink);
+}
+.itin-content .itin-day-list li:last-child {
+  border-bottom: 0;
+}
+.itin-content .itin-day-list .day-label {
+  flex: none;
+  min-width: 5.5rem;
+  font-size: 0.75rem; /* same as .region-tag / .td-tag */
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+.itin-content .btn-view-itin {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: var(--terracotta);
+  color: #fff;
+  border: 1px solid var(--terracotta);
+  border-radius: 0.375rem;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.itin-content .btn-view-itin:hover {
+  background: var(--terracotta-dark);
+  border-color: var(--terracotta-dark);
+  color: #fff;
+}
+ 
+@media (min-width: 768px) {
+  .itin-content .itin-details-col {
+    padding: 1.75rem 2rem;
+    border-top: 0;
+    border-left: 4px solid var(--gold);
+  }
+}
+ 
+ 
+/* =====================================================================
+   RESPONSIVE + MOTION
+===================================================================== */
+@media (max-width: 767.98px) {
+  /* The entry page photo pair uses col-5 / col-5 / col-2 on every screen.
+     On phones: two photos side by side, sticky note on its own row. */
+  .photo-pair-section .row > :nth-child(1),
+  .photo-pair-section .row > :nth-child(2) {
+    width: 50%;
+  }
+  .photo-pair-section .row > :nth-child(3) {
+    width: 100%;
+  }
+  .photo-pair-section .sticky-note-quote {
+    max-width: 100%;
+  }
+}
+@media (max-width: 575.98px) {
+  .journal-hero,
+  .itin-hero {
+    padding: 2.5rem 0 1.5rem;
+  }
+  .notebook-card {
+    padding: 1.25rem;
+  }
+  .notebook-card .notebook-photo {
+    height: 220px;
+  }
+  .entries-section {
+    padding: 3.5rem 0;
+  }
+  .entries-section .polaroid-card.tilt-l,
+  .entries-section .polaroid-card.tilt-r,
+  .photo-pair-section .polaroid-frame.tilt-left,
+  .photo-pair-section .polaroid-frame.tilt-right {
+    transform: none;
+  }
+  .photo-pair-section .polaroid-photo {
+    height: 150px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .entries-section .polaroid-card,
+  .photo-pair-section .polaroid-frame,
+  .itin-content .itin-photo {
+    transition: none;
+  }
+  .entries-section .polaroid-card:hover,
+  .photo-pair-section .polaroid-frame:hover,
+  .itin-content .itin-card-row:hover .itin-photo {
+    transform: none;
+  }
+}
