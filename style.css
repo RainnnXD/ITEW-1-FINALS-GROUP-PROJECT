@@ -10,8 +10,8 @@
   --terracotta-dark: #96441f;
   --gold: #e5b143;
   --ink: #26323b;
-  --text-muted: #6B6B6B;
-  --border-light: #E0D5C5;
+  --text-muted: #6b6b6b;
+  --border-light: #e0d5c5;
 
   --bs-body-font-family: "Figtree", system-ui, sans-serif;
   --bs-body-bg: var(--cream);
@@ -179,7 +179,7 @@ Drop your photos into images/ using the file names below. */
 }
 .island-luzon {
   background:
-    url("img/luzon.avif") center / cover,
+    url("img/destination1_Luzon.avif") center / cover,
     linear-gradient(135deg, #2f6b4f, #e5b143);
   transition: ease-in-out 0.2s;
 }
@@ -237,22 +237,22 @@ Drop your photos into images/ using the file names below. */
 }
 .slide-boracay {
   background:
-    url("img/boracay.jpg") center / cover,
+    url("img/destination3_Boracay.jpg") center / cover,
     linear-gradient(135deg, #1b9aaa, #2f6b4f);
 }
 .slide-hulugan-falls {
   background:
-    url("img/hulugan_falls.jpeg") center / cover,
+    url("img/destination4_Hulugan_Falls.jpeg") center / cover,
     linear-gradient(135deg, #5b8c3a, #2f6b4f);
 }
 .slide-intramuros {
   background:
-    url("img/intramuros.jpeg") center / cover,
+    url("img/destination5_Intramuros.jpeg") center / cover,
     linear-gradient(135deg, #a8b45a, #6b8f3e);
 }
 .slide-kayangan-lake {
   background:
-    url("img/kayangan_lake.jpeg") center / cover,
+    url("img/destination6_Kayangan Lake.jpeg") center / cover,
     linear-gradient(135deg, #3fa7b5, #e5b143);
 }
 
@@ -1255,7 +1255,6 @@ html {
 }
 /* ===== END OF ENRACA'S PAGES ===== */
 
-
 /* =========================
       DESTINATION CSS
 ========================= */
@@ -1264,91 +1263,79 @@ html {
            HERO
 ========================= */
 .hero-luzon {
-    min-height: 480px;
-    display: flex;
-    align-items: center;
-    color: white;
-    background:
-        linear-gradient(
-          90deg,
-          rgba(18, 40, 64, 0.88),
-          rgba(18, 40, 64, 0.25)
-        ),
-        url("img/luzon-hero-bg.jpg");
-      background-size: cover;
-      background-position: center;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(18, 40, 64, 0.88), rgba(18, 40, 64, 0.25)),
+    url("img/luzon-hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 /* VISAYAS */
 .hero-visayas {
-    min-height: 480px;
-    display: flex;
-    align-items: center;
-    color: white;
-    background:
-        linear-gradient(
-          90deg,
-            rgba(18, 40, 64, 0.88),
-            rgba(18, 40, 64, 0.25)
-          ),
-          url("img/visayas-hero-bg.jpg");
-        background-size: cover;
-        background-position: center;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(18, 40, 64, 0.88), rgba(18, 40, 64, 0.25)),
+    url("img/visayas-hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 /* MINDANAO */
 .hero-mindanao {
-    min-height: 480px;
-    display: flex;
-    align-items: center;
-    color: white;
-    background:
-        linear-gradient(
-          90deg,
-            rgba(18, 40, 64, 0.88),
-            rgba(18, 40, 64, 0.25)
-        ),
-        url("img/mindanao-hero-bg.jpg");
-      background-size: cover;
-      background-position: center;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(18, 40, 64, 0.88), rgba(18, 40, 64, 0.25)),
+    url("img/mindanao-hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-luzon h1,
 .hero-visayas h1,
 .hero-mindanao h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(2.7rem, 6vw, 4.7rem);
-    font-weight: bold;
+  font-family: Georgia, serif;
+  font-size: clamp(2.7rem, 6vw, 4.7rem);
+  font-weight: bold;
 }
 
 .hero-luzon p,
 .hero-visayas p,
 .hero-mindanao p {
-    max-width: 650px;
-    line-height: 1.8;
+  max-width: 650px;
+  line-height: 1.8;
 }
 
 .eyebrow {
-    color: #F3D98F;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    font-weight: bold;
+  color: #f3d98f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 .btn-explore {
-    background: var(--terracotta);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 3px;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
+  background: var(--terracotta);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 3px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-explore:hover {
-            background: #D4724A;
-            color: white;
+  background: #d4724a;
+  color: white;
 }
 
 /* =========================
@@ -1356,48 +1343,50 @@ html {
 ========================= */
 
 .section-title {
-    font-family: Georgia, serif;
-    color: var(--ocean);
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-family: Georgia, serif;
+  color: var(--ocean);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
 }
 
 .destination-card {
-    height: 100%;
-    background: #FFFDF7;
-    border: 1px solid var(--border-light);
-    transition: transform 0.25s, box-shadow 0.25s;
-    overflow: hidden;
+  height: 100%;
+  background: #fffdf7;
+  border: 1px solid var(--border-light);
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+  overflow: hidden;
 }
 
 .destination-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px #00000018;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px #00000018;
 }
 
 .destination-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
 .destination-card h3 {
-    color: var(--ocean);
-    font-family: Georgia, serif;
-    font-size: 1.5rem;
+  color: var(--ocean);
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
 }
 
 .destination-card p {
-    color: var(--text-muted);
-    font-size: 0.93rem;
-    line-height: 1.7;
+  color: var(--text-muted);
+  font-size: 0.93rem;
+  line-height: 1.7;
 }
 
 .destination-tag {
-    color: var(--terracotta);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-size: 0.75rem;
-    font-weight: bold;
+  color: var(--terracotta);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.75rem;
+  font-weight: bold;
 }
 
 /* =========================
@@ -1406,28 +1395,28 @@ html {
 
 #travel-tips .bg-white,
 #travel-tips .bg-white * {
-    visibility: visible !important;
-    opacity: 1 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 #travel-tips .bg-white p {
-    color: #123f5d !important;
-    display: block !important;
-    font-size: 15px;
-    line-height: 1.9;
-    margin-top: 16px;
+  color: #123f5d !important;
+  display: block !important;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-top: 16px;
 }
 
 #travel-tips .bg-white h3,
 #travel-tips .bg-white h4,
 #travel-tips .bg-white h5 {
-    color: #123f5d !important;
+  color: #123f5d !important;
 }
 
 .tip-number {
-    color: var(--terracotta);
-    font-weight: bold;
-    letter-spacing: 1px;
+  color: var(--terracotta);
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .d-destination {
@@ -1455,7 +1444,6 @@ html {
   text-transform: uppercase;
   color: var(--green);
 }
-
 
 /* luzon */
 .d-baguio {
@@ -1554,4 +1542,3 @@ html {
     url("img/mindanao-zam.jpg") center / cover,
     linear-gradient(135deg, #2f6b4f, #e5b143);
 }
-
