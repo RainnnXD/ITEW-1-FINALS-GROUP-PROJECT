@@ -1404,8 +1404,24 @@ html {
        TRAVEL TIPS
 ========================= */
 
-.travel-tips {
-    background: #EAE5D7;
+#travel-tips .bg-white,
+#travel-tips .bg-white * {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#travel-tips .bg-white p {
+    color: #123f5d !important;
+    display: block !important;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-top: 16px;
+}
+
+#travel-tips .bg-white h3,
+#travel-tips .bg-white h4,
+#travel-tips .bg-white h5 {
+    color: #123f5d !important;
 }
 
 .tip-number {
@@ -1414,4 +1430,128 @@ html {
     letter-spacing: 1px;
 }
 
-        
+.d-destination {
+  border: 0;
+  border-radius: 0.9rem;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(14, 59, 92, 0.12);
+}
+.d-destination .card-body {
+  padding: 1.25rem 1.4rem 1.5rem;
+}
+.d-destination .card-title {
+  font-size: 1.3rem;
+  margin-top: 0.3rem;
+}
+.d-photo {
+  aspect-ratio: 4 / 3;
+}
+.d-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+
+/* luzon */
+.d-baguio {
+  background:
+    url("img/luzon-baguio.jpg") center / cover,
+    linear-gradient(135deg, #5a3a22, #b5532d);
+}
+.d-banaue {
+  background:
+    url("img/luzon-banaue.jpg") center / cover,
+    linear-gradient(135deg, #b5532d, #e5b143);
+}
+.d-vigan {
+  background:
+    url("img/luzon-vigan.jpg") center / cover,
+    linear-gradient(135deg, #8a5fb0, #f3e2b3);
+}
+.d-batangas {
+  background:
+    url("img/luzon-batangas.jpg") center / cover,
+    linear-gradient(135deg, #96441f, #e5b143);
+}
+.d-bicol {
+  background:
+    url("img/luzon-bicol.jpg") center / cover,
+    linear-gradient(135deg, #1b9aaa, #f3e2b3);
+}
+.d-palawan {
+  background:
+    url("img/luzon-palawan.jpg") center / cover,
+    linear-gradient(135deg, #2f6b4f, #e5b143);
+}
+
+/* visayas */
+
+.d-boracay {
+  background:
+    url("img/visayas-boracay.jpg") center / cover,
+    linear-gradient(135deg, #5a3a22, #b5532d);
+}
+.d-bohol {
+  background:
+    url("img/visayas-bohol.jpg") center / cover,
+    linear-gradient(135deg, #b5532d, #e5b143);
+}
+.d-cebu {
+  background:
+    url("img/visayas-cebu.jpg") center / cover,
+    linear-gradient(135deg, #8a5fb0, #f3e2b3);
+}
+.d-bantayan {
+  background:
+    url("img/visayas-bantayan.jpg") center / cover,
+    linear-gradient(135deg, #96441f, #e5b143);
+}
+.d-moalboal {
+  background:
+    url("img/visayas-moalboal.jpg") center / cover,
+    linear-gradient(135deg, #1b9aaa, #f3e2b3);
+}
+.d-iloilo {
+  background:
+    url("img/visayas-iloilo.jpg") center / cover,
+    linear-gradient(135deg, #2f6b4f, #e5b143);
+}
+
+/* mindanao */
+
+.d-bukidnon {
+  background:
+    url("img/mindanao-bukidnon.jpg") center / cover,
+    linear-gradient(135deg, #5a3a22, #b5532d);
+}
+.d-siargao {
+  background:
+    url("img/mindanao-siargao.jpg") center / cover,
+    linear-gradient(135deg, #b5532d, #e5b143);
+}
+.d-iligan {
+  background:
+    url("img/mindanao-iligan.jpg") center / cover,
+    linear-gradient(135deg, #8a5fb0, #f3e2b3);
+}
+.d-davao {
+  background:
+    url("img/mindanao-davao.jpg") center / cover,
+    linear-gradient(135deg, #96441f, #e5b143);
+}
+.d-camiguin {
+  background:
+    url("img/mindanao-camiguin.jpg") center / cover,
+    linear-gradient(135deg, #1b9aaa, #f3e2b3);
+}
+.d-zamboanga {
+  background:
+    url("img/mindanao-zam.jpg") center / cover,
+    linear-gradient(135deg, #2f6b4f, #e5b143);
+}
+
